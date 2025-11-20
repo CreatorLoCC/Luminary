@@ -1,5 +1,5 @@
 /**
- * Storage utilities for reading LuminaryFlow project data
+ * Storage utilities for reading LuminarySmartSpace project data
  * Shared logic between CLI and MCP server
  */
 

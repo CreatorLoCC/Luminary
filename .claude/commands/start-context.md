@@ -16,7 +16,7 @@ Show details for: **{{prompt}}**
 **STEP 1**: Call the MCP get_context tool
 
 ```javascript
-mcp__luminaryflow__get_context({
+mcp__luminarysmartspace__get_context({
   "id": "{{prompt}}"
 })
 ```

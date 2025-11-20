@@ -125,7 +125,7 @@ If the analysis reveals work to be done, **create a spec and save to MCP**:
 }
 ```
 
-Use `mcp__luminaryflow__save_spec` to persist this for future implementation.
+Use `mcp__luminarysmartspace__save_spec` to persist this for future implementation.
 
 ### STEP 5: DELIVER RESULTS
 

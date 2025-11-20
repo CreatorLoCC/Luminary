@@ -1,4 +1,4 @@
-# 🚀 Getting Started with LuminaryFlow
+# 🚀 Getting Started with LuminarySmartSpace
 
 **5-Minute Setup Guide** - Get up and running fast!
 

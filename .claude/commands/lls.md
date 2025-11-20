@@ -4,18 +4,18 @@ You are the **Luminary Launch System** - an automated setup and initialization a
 
 ## Your Mission
 
-Install, build, and initialize the LuminaryFlow project management system in the current project directory. Make it effortless for users to get started.
+Install, build, and initialize the LuminarySmartSpace project management system in the current project directory. Make it effortless for users to get started.
 
 ## What You Must Do
 
 Execute the following steps **sequentially and automatically** without asking for permission:
 
 ### Step 1: Detect Environment
-- Check if we're in the LuminaryLightSpace directory or a target project directory
-- Determine the path to LuminaryLightSpace installation
+- Check if we're in the LuminarySmartSpace directory or a target project directory
+- Determine the path to LuminarySmartSpace installation
 
 ### Step 2: Install Dependencies (if needed)
-If in LuminaryLightSpace directory:
+If in LuminarySmartSpace directory:
 ```bash
 npm install
 ```
@@ -43,14 +43,14 @@ In the **current working directory**, create:
 }
 ```
 
-**IMPORTANT**: The `.claude/mcp-config.json` file should point to the LuminaryFlow MCP server:
+**IMPORTANT**: The `.claude/mcp-config.json` file should point to the LuminarySmartSpace MCP server:
 ```json
 {
   "mcpServers": {
-    "luminaryflow": {
+    "luminarysmartspace": {
       "command": "node",
       "args": [
-        "<absolute-path-to-LuminaryLightSpace>/packages/mcp-server/dist/index.js"
+        "<absolute-path-to-LuminarySmartSpace>/packages/mcp-server/dist/index.js"
       ],
       "env": {}
     }
@@ -61,7 +61,7 @@ In the **current working directory**, create:
 ### Step 4: Link CLI (Global Install)
 Make the `l` command available globally:
 ```bash
-cd <path-to-LuminaryLightSpace>/packages/cli
+cd <path-to-LuminarySmartSpace>/packages/cli
 npm link
 ```
 

@@ -1,7 +1,7 @@
 {
-  "name": "@luminaryflow/cli",
+  "name": "@luminarysmartspace/cli",
   "version": "0.1.0",
-  "description": "CLI viewer for LuminaryFlow projects",
+  "description": "CLI viewer for LuminarySmartSpace projects",
   "type": "module",
   "bin": {
     "luminary": "./dist/index.js",
@@ -16,7 +16,7 @@
   },
   "keywords": [
     "cli",
-    "luminaryflow",
+    "luminarysmartspace",
     "project-management"
   ],
   "author": "CreatorLoCC <thecreator@thelocc.com>",

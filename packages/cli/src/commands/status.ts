@@ -32,7 +32,7 @@ export async function statusCommand(): Promise<void> {
   );
 
   // Display header
-  console.log(chalk.bold.cyan(`\n📂 LuminaryFlow Projects (${projects.length} total)\n`));
+  console.log(chalk.bold.cyan(`\n📂 LuminarySmartSpace Projects (${projects.length} total)\n`));
 
   // Display each project
   sortedProjects.forEach((project, index) => {

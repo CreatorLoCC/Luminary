@@ -17,7 +17,7 @@ Execute implementation for: **{{prompt}}**
 
 **CRITICAL: First, retrieve the specification from MCP storage!**
 
-Call `mcp__luminaryflow__get_context` with:
+Call `mcp__luminarysmartspace__get_context` with:
 ```javascript
 {
   "id": "{{prompt}}"  // The spec ID provided by user
@@ -87,7 +87,7 @@ For each task you're working on:
 
 ### STEP 5: UPDATE MCP STORAGE
 
-After completing each task (or set of tasks), **save progress** using `mcp__luminaryflow__save_spec`:
+After completing each task (or set of tasks), **save progress** using `mcp__luminarysmartspace__save_spec`:
 
 ```javascript
 {

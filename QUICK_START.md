@@ -4,10 +4,10 @@
 
 ---
 
-## 🚀 One-Time Setup (LuminaryLightSpace)
+## 🚀 One-Time Setup (LuminarySmartSpace)
 
 ```bash
-cd /path/to/LuminaryLightSpace
+cd /path/to/LuminarySmartSpace
 npm run setup
 ```
 
@@ -20,12 +20,12 @@ npm run setup
 ### Option 1: Automatic Script
 ```bash
 cd /path/to/your/project
-node /path/to/LuminaryLightSpace/scripts/init-project.js
+node /path/to/LuminarySmartSpace/scripts/init-project.js
 ```
 
-### Option 2: From LuminaryLightSpace
+### Option 2: From LuminarySmartSpace
 ```bash
-cd /path/to/LuminaryLightSpace
+cd /path/to/LuminarySmartSpace
 npm run init-project /path/to/your/project
 ```
 
@@ -108,7 +108,7 @@ Run `l status` from **anywhere** and see all 3 projects! 🎉
 
 ## 🆘 Need Help?
 
-- **CLI not found?** → Run `npm run setup` from LuminaryLightSpace
+- **CLI not found?** → Run `npm run setup` from LuminarySmartSpace
 - **Projects not showing?** → Check `.claude/luminary/projects.json` exists
 - **MCP not working?** → Verify `.claude/mcp-config.json` has correct path
 

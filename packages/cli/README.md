@@ -1,8 +1,8 @@
-# 💻 LuminaryFlow CLI
+# 💻 LuminarySmartSpace CLI
 
 **Part of the [💡 Luminary](https://github.com/CreatorLoCC/Luminary) ecosystem**
 
-Command-line interface for viewing and managing LuminaryFlow project data.
+Command-line interface for viewing and managing LuminarySmartSpace project data.
 
 ---
 
@@ -45,7 +45,7 @@ l status
 
 **Output:**
 ```
-📂 LuminaryFlow Projects (2 total)
+📂 LuminarySmartSpace Projects (2 total)
 
 🔄  User Authentication System [user-auth]
    Status: in-progress | Progress: █████░░░░░░░░░░ 33% (1/3)
@@ -180,7 +180,7 @@ The CLI reads project data from:
 .claude/luminary/projects.json
 ```
 
-This file is created and managed by the LuminaryFlow MCP server. The CLI provides read-only access for viewing your project data.
+This file is created and managed by the LuminarySmartSpace MCP server. The CLI provides read-only access for viewing your project data.
 
 ## 🎨 Features
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * LuminaryFlow CLI - Command-line viewer for project data
+ * LuminarySmartSpace CLI - Command-line viewer for project data
  *
  * Usage:
  *   luminary status              - View all projects
@@ -22,7 +22,7 @@ const program = new Command();
 
 program
   .name('luminary')
-  .description('CLI viewer for LuminaryFlow project management')
+  .description('CLI viewer for LuminarySmartSpace project management')
   .version('0.1.0');
 
 // luminary status
@@ -86,7 +86,7 @@ program
 
 // Default action - show help if no command provided
 program.action(() => {
-  console.log(chalk.bold.cyan('\n🚀 LuminaryFlow CLI\n'));
+  console.log(chalk.bold.cyan('\n🚀 LuminarySmartSpace CLI\n'));
   console.log(chalk.dim('Available commands:\n'));
   console.log('  luminary status              - View all projects');
   console.log('  luminary select              - Pick a project interactively');

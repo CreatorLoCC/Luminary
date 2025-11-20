@@ -1,5 +1,5 @@
 {
-  "name": "luminaryflow",
+  "name": "luminarysmartspace",
   "version": "0.1.0",
   "description": "Project management tools for Claude Code",
   "type": "module",
@@ -8,10 +8,10 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "npm run build -w @luminaryflow/mcp-server && npm run build -w @luminaryflow/cli",
-    "build:server": "npm run build -w @luminaryflow/mcp-server",
-    "build:cli": "npm run build -w @luminaryflow/cli",
-    "dev": "npm run dev -w @luminaryflow/mcp-server",
+    "build": "npm run build -w @luminarysmartspace/mcp-server && npm run build -w @luminarysmartspace/cli",
+    "build:server": "npm run build -w @luminarysmartspace/mcp-server",
+    "build:cli": "npm run build -w @luminarysmartspace/cli",
+    "dev": "npm run dev -w @luminarysmartspace/mcp-server",
     "clean": "rm -rf packages/*/dist packages/*/node_modules node_modules",
     "setup": "npm install && npm run build && cd packages/cli && npm link",
     "init-project": "node scripts/init-project.js",

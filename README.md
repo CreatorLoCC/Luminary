@@ -1,4 +1,4 @@
-# 🌊 LuminaryFlow
+# 🌊 LuminarySmartSpace
 
 **Project Management for Claude Code** - Part of the **[💡 Luminary](https://github.com/CreatorLoCC/Luminary)** ecosystem
 
@@ -20,7 +20,7 @@ Give Claude persistent memory for your projects. Plan once, remember forever.
 ```bash
 # 1. Clone the repo
 git clone https://github.com/CreatorLoCC/Luminary.git
-cd LuminaryLightSpace
+cd LuminarySmartSpace
 
 # 2. One-command setup
 npm run setup
@@ -49,7 +49,7 @@ l status
 
 **The Problem**: Claude forgets your project plans when the session ends.
 
-**The Solution**: LuminaryFlow gives Claude tools to:
+**The Solution**: LuminarySmartSpace gives Claude tools to:
 - 💾 **Save** project specs and tasks
 - 🔄 **Retrieve** context across sessions
 - 📊 **Track** progress over time
@@ -68,7 +68,7 @@ l status
               │ - list_projects
               │
 ┌─────────────▼───────────────────────────────┐
-│      LuminaryFlow MCP Server                │
+│      LuminarySmartSpace MCP Server                │
 │  (Node.js process running in background)    │
 └─────────────┬───────────────────────────────┘
               │
@@ -176,7 +176,7 @@ Returns:
 1. **Clone this repository**
    ```bash
    git clone <your-repo-url>
-   cd LuminaryLightSpace
+   cd LuminarySmartSpace
    ```
 
 2. **Launch with the cross-platform script**
@@ -257,7 +257,7 @@ Claude: "You have 3 projects:
 ## 🗂️ Project Structure
 
 ```
-LuminaryLightSpace/
+LuminarySmartSpace/
 ├── packages/
 │   ├── mcp-server/              # MCP Server implementation
 │   │   ├── src/
@@ -442,10 +442,10 @@ MIT License - feel free to use and modify!
 
 ## 💡 About Luminary
 
-LuminaryFlow is part of the **Luminary** ecosystem - a solo AI dev company building production-ready, open-source tools for developers.
+LuminarySmartSpace is part of the **Luminary** ecosystem - a solo AI dev company building production-ready, open-source tools for developers.
 
 **Other Luminary Projects**:
-- 🌊 LuminaryFlow (this project) - Project management for Claude Code
+- 🌊 LuminarySmartSpace (this project) - Project management for Claude Code
 - 🔮 More coming soon...
 
 **Connect**:
@@ -459,7 +459,7 @@ LuminaryFlow is part of the **Luminary** ecosystem - a solo AI dev company build
 
 <div align="center">
 
-**Happy coding with LuminaryFlow! 🚀**
+**Happy coding with LuminarySmartSpace! 🚀**
 
 Questions or feedback? [Open an issue](https://github.com/CreatorLoCC/Luminary/issues)!
 

@@ -6,7 +6,7 @@
 
 ## Quick Install
 
-### From LuminaryLightSpace Directory
+### From LuminarySmartSpace Directory
 
 ```bash
 npm run setup
@@ -39,10 +39,10 @@ Claude will automatically:
 From any project directory:
 ```bash
 cd /path/to/your/project
-node /path/to/LuminaryLightSpace/scripts/init-project.js
+node /path/to/LuminarySmartSpace/scripts/init-project.js
 ```
 
-Or from LuminaryLightSpace:
+Or from LuminarySmartSpace:
 ```bash
 npm run init-project /path/to/your/project
 ```
@@ -72,10 +72,10 @@ your-project/
 ```json
 {
   "mcpServers": {
-    "luminaryflow": {
+    "luminarysmartspace": {
       "command": "node",
       "args": [
-        "/absolute/path/to/LuminaryLightSpace/packages/mcp-server/dist/index.js"
+        "/absolute/path/to/LuminarySmartSpace/packages/mcp-server/dist/index.js"
       ],
       "env": {}
     }
@@ -94,7 +94,7 @@ l status
 
 You should see:
 ```
-📂 LuminaryFlow Projects (X total)
+📂 LuminarySmartSpace Projects (X total)
 ```
 
 ### Check MCP Server
@@ -109,7 +109,7 @@ Luminary automatically scans your workspace for all projects!
 **Example workspace structure**:
 ```
 Projects/
-  ├── LuminaryLightSpace/      # Luminary installation
+  ├── LuminarySmartSpace/      # Luminary installation
   │   └── .claude/luminary/
   ├── my-app/                   # Your project 1
   │   └── .claude/luminary/
@@ -129,7 +129,7 @@ Running `l status` from **anywhere** will show ALL projects!
 
 The CLI wasn't linked globally. Run:
 ```bash
-cd /path/to/LuminaryLightSpace/packages/cli
+cd /path/to/LuminarySmartSpace/packages/cli
 npm link
 ```
 
@@ -138,11 +138,11 @@ npm link
 1. Check the path in `.claude/mcp-config.json` is absolute
 2. Verify the MCP server is built:
    ```bash
-   ls /path/to/LuminaryLightSpace/packages/mcp-server/dist/index.js
+   ls /path/to/LuminarySmartSpace/packages/mcp-server/dist/index.js
    ```
 3. Rebuild if needed:
    ```bash
-   cd /path/to/LuminaryLightSpace
+   cd /path/to/LuminarySmartSpace
    npm run build:server
    ```
 

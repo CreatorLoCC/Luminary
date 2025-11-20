@@ -63,7 +63,7 @@ Available commands:
 ```json
 {
   "mcpServers": {
-    "luminaryflow": {
+    "luminarysmartspace": {
       "command": "node",
       "args": ["<absolute-path>/packages/mcp-server/dist/index.js"]
     }
@@ -157,7 +157,7 @@ deliver fast AND good
 
 ### MCP Tools Not Available
 ```
-Problem: Claude doesn't see mcp__luminaryflow__* tools
+Problem: Claude doesn't see mcp__luminarysmartspace__* tools
 
 Solution:
 1. Restart Claude with: ./lls

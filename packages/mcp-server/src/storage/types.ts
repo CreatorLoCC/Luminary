@@ -1,5 +1,5 @@
 /**
- * Core types for LuminaryFlow project storage
+ * Core types for LuminarySmartSpace project storage
  */
 
 export interface Task {

@@ -80,7 +80,7 @@ Break down the work into specific, actionable tasks:
 
 **CRITICAL: After creating the specification, you MUST save it using the MCP tool.**
 
-Call the `mcp__luminaryflow__save_spec` tool with:
+Call the `mcp__luminarysmartspace__save_spec` tool with:
 ```javascript
 {
   "id": "project-id",           // Lowercase, hyphens only

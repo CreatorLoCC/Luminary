@@ -1,4 +1,4 @@
-# 🚀 LuminaryFlow Startup Guide
+# 🚀 LuminarySmartSpace Startup Guide
 
 **The definitive guide for new users** - From zero to `l status` in under 2 minutes!
 
@@ -7,7 +7,7 @@
 ## 📋 What You'll Get
 
 By the end of this guide, you'll have:
-- ✅ LuminaryFlow installed and built
+- ✅ LuminarySmartSpace installed and built
 - ✅ The `l` command available globally in any terminal
 - ✅ Your projects tracked and visible with `l status`
 - ✅ Claude Code integrated with MCP tools for persistent project memory
@@ -29,7 +29,7 @@ Before you start, ensure you have:
 
 ```bash
 git clone https://github.com/CreatorLoCC/Luminary.git
-cd LuminaryLightSpace
+cd LuminarySmartSpace
 ```
 
 ### Step 2: Run the Setup Command
@@ -43,7 +43,7 @@ This single command will:
 - Build the MCP server and CLI packages
 - Link the `l` command globally
 
-**That's it for the LuminaryFlow installation!** ✨
+**That's it for the LuminarySmartSpace installation!** ✨
 
 ### Step 3: Open Claude Code
 
@@ -63,7 +63,7 @@ In Claude Code, type:
 ```
 
 Claude will automatically:
-- Detect the LuminaryLightSpace installation
+- Detect the LuminarySmartSpace installation
 - Create the `.claude/luminary/` directory structure
 - Initialize `projects.json`
 - Configure the MCP server connection
@@ -96,7 +96,7 @@ You should see your projects listed! 🎉
 
 ## 🔄 Daily Workflow
 
-Once set up, here's how you use LuminaryFlow every day:
+Once set up, here's how you use LuminarySmartSpace every day:
 
 ### Opening a Fresh Terminal
 
@@ -148,7 +148,7 @@ Claude will automatically:
 
 The `/lls` command is a **Luminary Launch System** that:
 
-1. **Detects Environment**: Finds your LuminaryLightSpace installation
+1. **Detects Environment**: Finds your LuminarySmartSpace installation
 2. **Installs Dependencies**: Runs `npm install` if needed
 3. **Builds Packages**: Compiles TypeScript to JavaScript
 4. **Initializes Structure**: Creates `.claude/luminary/projects.json`
@@ -185,7 +185,7 @@ This file contains:
               │ - list_projects
               │
 ┌─────────────▼───────────────────────────────┐
-│      LuminaryFlow MCP Server                │
+│      LuminarySmartSpace MCP Server                │
 │  (Node.js process running in background)    │
 └─────────────┬───────────────────────────────┘
               │
@@ -216,7 +216,7 @@ To permanently fix, remove the `l` alias from your `.bashrc`, `.zshrc`, or Git c
 
 **Solution**:
 ```bash
-cd /path/to/LuminaryLightSpace/packages/cli
+cd /path/to/LuminarySmartSpace/packages/cli
 npm link
 ```
 
@@ -233,11 +233,11 @@ The `l` command should be in `<prefix>/bin/l`.
 1. Verify the path in `.claude/mcp-config.json` is absolute
 2. Check the MCP server is built:
    ```bash
-   ls /path/to/LuminaryLightSpace/packages/mcp-server/dist/index.js
+   ls /path/to/LuminarySmartSpace/packages/mcp-server/dist/index.js
    ```
 3. Rebuild if needed:
    ```bash
-   cd /path/to/LuminaryLightSpace
+   cd /path/to/LuminarySmartSpace
    npm run build:server
    ```
 
@@ -252,9 +252,9 @@ The `l` command should be in `<prefix>/bin/l`.
 
 **Solution**:
 1. The `/lls` command file should be in `.claude/commands/lls.md`
-2. If missing, copy it from LuminaryLightSpace:
+2. If missing, copy it from LuminarySmartSpace:
    ```bash
-   cp /path/to/LuminaryLightSpace/.claude/commands/lls.md /path/to/your/project/.claude/commands/
+   cp /path/to/LuminarySmartSpace/.claude/commands/lls.md /path/to/your/project/.claude/commands/
    ```
 3. Restart Claude Code
 
@@ -307,7 +307,7 @@ l tasks --status todo
 l status
 
 # Output:
-# 📂 LuminaryFlow Projects (3 total)
+# 📂 LuminarySmartSpace Projects (3 total)
 #
 # 📋  Blog Platform [blog-platform]
 #    Status: in-progress | Progress: ████████░░ 60%
@@ -332,7 +332,7 @@ If you prefer manual control:
 
 ```bash
 # 1. Install and build
-cd /path/to/LuminaryLightSpace
+cd /path/to/LuminarySmartSpace
 npm install
 npm run build
 
@@ -357,17 +357,17 @@ EOF
 cat > .claude/mcp-config.json << 'EOF'
 {
   "mcpServers": {
-    "luminaryflow": {
+    "luminarysmartspace": {
       "command": "node",
       "args": [
-        "/absolute/path/to/LuminaryLightSpace/packages/mcp-server/dist/index.js"
+        "/absolute/path/to/LuminarySmartSpace/packages/mcp-server/dist/index.js"
       ],
       "env": {}
     }
   }
 }
 EOF
-# Remember to replace /absolute/path/to/LuminaryLightSpace with your actual path!
+# Remember to replace /absolute/path/to/LuminarySmartSpace with your actual path!
 
 # 6. Test
 l status
@@ -375,11 +375,11 @@ l status
 
 ### Workspace Mode (Multiple Projects)
 
-LuminaryFlow automatically scans your workspace for all projects!
+LuminarySmartSpace automatically scans your workspace for all projects!
 
 ```
 Projects/
-  ├── LuminaryLightSpace/      # Luminary installation
+  ├── LuminarySmartSpace/      # Luminary installation
   ├── my-app/
   │   └── .claude/luminary/    # Project 1 tracking
   ├── another-project/
@@ -402,17 +402,17 @@ Running `l status` from **anywhere** shows ALL projects! 🎉
 
 ---
 
-## 🎓 Understanding LuminaryFlow
+## 🎓 Understanding LuminarySmartSpace
 
 ### The Problem It Solves
 
-**Without LuminaryFlow**:
+**Without LuminarySmartSpace**:
 - Claude forgets your project plans when sessions end
 - You have to re-explain context every time
 - No persistent tracking of progress
 - Manual status updates
 
-**With LuminaryFlow**:
+**With LuminarySmartSpace**:
 - Claude remembers your projects across sessions
 - Context is automatically retrieved
 - Progress is tracked automatically
@@ -440,7 +440,7 @@ alias lt='l tasks'     # Quick task list
 
 ### Tip 2: Use It for Personal Projects Too
 
-LuminaryFlow isn't just for coding projects! Track:
+LuminarySmartSpace isn't just for coding projects! Track:
 - Writing projects
 - Learning goals
 - Home improvement projects
@@ -465,7 +465,7 @@ Want to share a project plan with teammates?
 l context my-project > project-spec.md
 ```
 
-They can then ask Claude to import it into their own LuminaryFlow!
+They can then ask Claude to import it into their own LuminarySmartSpace!
 
 ---
 
@@ -479,7 +479,7 @@ They can then ask Claude to import it into their own LuminaryFlow!
 
 ### Common Questions
 
-**Q: Does LuminaryFlow work with other AI assistants?**
+**Q: Does LuminarySmartSpace work with other AI assistants?**
 A: The CLI (`l status`, etc.) works standalone. The MCP tools are Claude-specific.
 
 **Q: Can I use it without Claude Code?**
@@ -498,7 +498,7 @@ A: Run `/lls` in each workspace. They'll be tracked separately.
 
 ## 🎉 You're Ready!
 
-Congratulations! You now have LuminaryFlow set up and ready to use.
+Congratulations! You now have LuminarySmartSpace set up and ready to use.
 
 **Your next steps**:
 1. Open a terminal and run `l status`

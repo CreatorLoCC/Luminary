@@ -12,7 +12,7 @@ Display all projects tracked in MCP storage.
 **STEP 1**: Call the MCP list_projects tool
 
 ```javascript
-mcp__luminaryflow__list_projects()
+mcp__luminarysmartspace__list_projects()
 ```
 
 **STEP 2**: Display the results

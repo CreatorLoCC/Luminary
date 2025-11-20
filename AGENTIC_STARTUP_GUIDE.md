@@ -32,9 +32,9 @@ Claude: Loads spec from MCP, continues work ✅
 
 **Storage**: `.claude/luminary/projects.json`
 **Tools Available**:
-- `mcp__luminaryflow__save_spec` - Save/update projects
-- `mcp__luminaryflow__get_context` - Retrieve project details
-- `mcp__luminaryflow__list_projects` - View all projects
+- `mcp__luminarysmartspace__save_spec` - Save/update projects
+- `mcp__luminarysmartspace__get_context` - Retrieve project details
+- `mcp__luminarysmartspace__list_projects` - View all projects
 
 ### 2. Workflow Commands
 
@@ -72,7 +72,7 @@ Claude:
    - Technical approach
    - Task breakdown (8-12 tasks)
    - Testing strategy
-4. AUTOMATICALLY calls mcp__luminaryflow__save_spec
+4. AUTOMATICALLY calls mcp__luminarysmartspace__save_spec
 5. Confirms: ✅ Saved as "blog-platform"
 ```
 
@@ -99,12 +99,12 @@ Claude:
 You: /start:implement blog-platform
 
 Claude:
-1. AUTOMATICALLY calls mcp__luminaryflow__get_context
+1. AUTOMATICALLY calls mcp__luminarysmartspace__get_context
 2. Loads full spec with all tasks
 3. Identifies next task to work on
 4. Implements task systematically
 5. Updates task status to "done"
-6. AUTOMATICALLY calls mcp__luminaryflow__save_spec
+6. AUTOMATICALLY calls mcp__luminarysmartspace__save_spec
 7. Reports progress
 ```
 
@@ -130,7 +130,7 @@ Claude:
 
 You: /start:list
 
-Claude: [Calls mcp__luminaryflow__list_projects]
+Claude: [Calls mcp__luminarysmartspace__list_projects]
 📂 Tracked Projects (1 total)
 
 🔄 [blog-platform] Blog Platform with Markdown
@@ -156,7 +156,7 @@ Claude: [Loads context, continues from Task 2] ✅
 1. Understand requirement (asks questions if needed)
 2. Analyze context (reviews codebase if applicable)
 3. Create comprehensive spec
-4. **AUTO-SAVES** via `mcp__luminaryflow__save_spec`
+4. **AUTO-SAVES** via `mcp__luminarysmartspace__save_spec`
 
 **Output**:
 - Project ID (for later use)
@@ -176,10 +176,10 @@ Claude: [Loads context, continues from Task 2] ✅
 **Syntax**: `/start:implement <spec-id>`
 
 **Process**:
-1. **AUTO-LOADS** via `mcp__luminaryflow__get_context`
+1. **AUTO-LOADS** via `mcp__luminarysmartspace__get_context`
 2. Analyzes current progress
 3. Implements next task(s)
-4. **AUTO-SAVES** progress via `mcp__luminaryflow__save_spec`
+4. **AUTO-SAVES** progress via `mcp__luminarysmartspace__save_spec`
 
 **Features**:
 - Resume from any point
@@ -241,7 +241,7 @@ Claude: [Loads context, continues from Task 2] ✅
 **Syntax**: `/start:list`
 
 **Process**:
-- Calls `mcp__luminaryflow__list_projects`
+- Calls `mcp__luminarysmartspace__list_projects`
 - Shows all projects with status and progress
 
 **Example Output**:
@@ -265,7 +265,7 @@ Claude: [Loads context, continues from Task 2] ✅
 **Syntax**: `/start:context <spec-id>`
 
 **Process**:
-- Calls `mcp__luminaryflow__get_context`
+- Calls `mcp__luminarysmartspace__get_context`
 - Shows full specification and task details
 
 **Example**:

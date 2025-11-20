@@ -35,7 +35,7 @@ Build production-ready, open-source tools that empower developers to work smarte
 
 ## 🛠️ Product Portfolio
 
-### LuminaryFlow
+### LuminarySmartSpace
 **Project Management for Claude Code**
 
 An MCP server and CLI toolkit that gives AI assistants persistent memory for project specifications and tasks.
@@ -84,7 +84,7 @@ An MCP server and CLI toolkit that gives AI assistants persistent memory for pro
 
 All products follow the **Luminary** prefix pattern:
 
-- **LuminaryFlow** - Project management toolkit
+- **LuminarySmartSpace** - Project management toolkit
 - **LuminaryAI** - (Future) AI development assistant
 - **LuminaryDeploy** - (Future) Deployment automation
 - **LuminaryTest** - (Future) AI-powered testing
@@ -148,7 +148,7 @@ NPM/GitHub packages use `@luminary/*` scope:
 
 Solo AI Dev Company building the future of development tools.
 
-🚀 Current Project: LuminaryFlow - Project management for Claude Code
+🚀 Current Project: LuminarySmartSpace - Project management for Claude Code
 ⚡ Focus: AI-assisted development tools
 🎯 Mission: Production-ready, open-source, developer-focused
 
@@ -184,7 +184,7 @@ Solo AI Dev Company building the future of development tools.
 ## 📈 Growth Strategy
 
 ### Phase 1: Foundation (Current)
-- ✅ Launch LuminaryFlow
+- ✅ Launch LuminarySmartSpace
 - ✅ Establish GitHub presence
 - 🔄 Build initial user base
 - 🔄 Gather feedback
@@ -254,7 +254,7 @@ Solo AI Dev Company building the future of development tools.
 ### Project Icons
 Each Luminary project gets a unique emoji:
 - 💡 Luminary (main brand)
-- 🌊 LuminaryFlow (flow/workflow)
+- 🌊 LuminarySmartSpace (flow/workflow)
 - 🤖 LuminaryAI (future)
 - 🚀 LuminaryDeploy (future)
 

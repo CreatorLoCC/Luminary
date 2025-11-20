@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * LuminaryFlow MCP Server - Main Entry Point
+ * LuminarySmartSpace MCP Server - Main Entry Point
  *
  * This is an MCP (Model Context Protocol) server that provides Claude with tools
  * to save, retrieve, and manage project specifications across sessions.
@@ -24,7 +24,7 @@
  * - Data persistence is handled by the storage layer in ./storage/
  *
  * @module index
- * @author LuminaryFlow Team
+ * @author LuminarySmartSpace Team
  */
 
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
@@ -180,7 +180,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
 
     // Log to stderr for server-side debugging (won't show to user)
-    console.error(`[LuminaryFlow] Error executing tool '${name}':`, error);
+    console.error(`[LuminarySmartSpace] Error executing tool '${name}':`, error);
 
     // Return formatted error to Claude (will show to user)
     return {
@@ -216,7 +216,7 @@ async function main(): Promise<void> {
     await server.connect(transport);
 
     // Log to stderr so it doesn't interfere with MCP protocol on stdout
-    console.error('LuminaryFlow MCP Server running on stdio');
+    console.error('LuminarySmartSpace MCP Server running on stdio');
     console.error('Awaiting tool requests from Claude...');
   } catch (error) {
     console.error('Failed to start MCP server:', error);
