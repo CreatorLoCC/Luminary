@@ -88,19 +88,19 @@ View your project data from the command line:
 
 ```bash
 # View all projects
-luminary status
+lm status              # or: luminary status
 
 # Select a project interactively ⭐
-luminary select
+lm select              # or: luminary select
 
 # List all tasks
-luminary tasks
+lm tasks               # or: luminary tasks
 
 # Filter tasks by status
-luminary tasks --status todo
+lm tasks --status todo
 
 # View project details (by ID)
-luminary context user-auth
+lm context user-auth   # or: luminary context user-auth
 ```
 
 **Installation:**
@@ -108,8 +108,10 @@ luminary context user-auth
 cd packages/cli
 npm install
 npm run build
-npm link  # Make 'luminary' available globally
+npm link  # Makes both 'luminary' and 'lm' available globally
 ```
+
+**Tip:** Use `lm` as shorthand for `luminary` - same power, fewer keystrokes! ⚡
 
 See [CLI Documentation](packages/cli/README.md) for details.
 
