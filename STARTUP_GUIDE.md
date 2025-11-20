@@ -475,7 +475,6 @@ They can then ask Claude to import it into their own LuminarySmartSpace!
 
 - **GitHub Issues**: [Report bugs or request features](https://github.com/CreatorLoCC/Luminary/issues)
 - **Discussions**: Share workflows and tips
-- **Email**: thecreator@thelocc.com
 
 ### Common Questions
 

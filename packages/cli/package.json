@@ -19,7 +19,7 @@
     "luminarysmartspace",
     "project-management"
   ],
-  "author": "CreatorLoCC <thecreator@thelocc.com>",
+  "author": "CreatorLoCC",
   "license": "MIT",
   "dependencies": {
     "chalk": "^5.3.0",

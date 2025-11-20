@@ -27,7 +27,7 @@ Build production-ready, open-source tools that empower developers to work smarte
 **Name**: Luminary
 **Type**: Solo AI Dev Company
 **Founder**: CreatorLoCC
-**Email**: thecreator@thelocc.com
+
 **GitHub**: [@CreatorLoCC](https://github.com/CreatorLoCC)
 **Repository**: [Luminary](https://github.com/CreatorLoCC/Luminary)
 
@@ -152,7 +152,6 @@ Solo AI Dev Company building the future of development tools.
 ⚡ Focus: AI-assisted development tools
 🎯 Mission: Production-ready, open-source, developer-focused
 
-📧 Contact: thecreator@thelocc.com
 ```
 
 ### README Headers
@@ -295,7 +294,7 @@ Each Luminary project gets a unique emoji:
 
 ## 📞 Contact
 
-**Email**: thecreator@thelocc.com
+
 **GitHub**: [@CreatorLoCC](https://github.com/CreatorLoCC)
 **Repository**: [github.com/CreatorLoCC/Luminary](https://github.com/CreatorLoCC/Luminary)
 

@@ -247,7 +247,7 @@ MIT
 
 **Part of the 💡 Luminary ecosystem**
 
-[Main Repository](https://github.com/CreatorLoCC/Luminary) | [More Projects](https://github.com/CreatorLoCC) | [Contact](mailto:thecreator@thelocc.com)
+[Main Repository](https://github.com/CreatorLoCC/Luminary) | [More Projects](https://github.com/CreatorLoCC)
 
 Built with ❤️ and AI by **Luminary**
 

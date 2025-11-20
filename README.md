@@ -450,7 +450,6 @@ LuminarySmartSpace is part of the **Luminary** ecosystem - a solo AI dev company
 
 **Connect**:
 - 🐙 GitHub: [@CreatorLoCC](https://github.com/CreatorLoCC)
-- 📧 Email: thecreator@thelocc.com
 - 🏢 Company: [Luminary](https://github.com/CreatorLoCC/Luminary)
 
 **Motto**: *"Solo Dev. Startup Energy. Production Quality."*
