@@ -19,25 +19,28 @@ npm install
 npm run build
 ```
 
-### Global Installation (Optional)
+### Global Installation (Recommended)
 
 ```bash
 # From the CLI package directory
 npm link
 
-# Now you can use 'luminary' from anywhere!
+# Now you can use 'luminary' or the shorthand 'l' from anywhere!
 luminary status
+l status        # Shorthand - same command, fewer keystrokes!
 ```
 
 ## 🎯 Commands
 
-### `luminary status`
+**Tip**: Use `l` as shorthand for `luminary` - e.g., `l status` instead of `luminary status`!
+
+### `luminary status` (or `l status`)
 
 View all projects with their status and progress.
 
 **Example:**
 ```bash
-luminary status
+l status
 ```
 
 **Output:**

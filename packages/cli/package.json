@@ -4,7 +4,8 @@
   "description": "CLI viewer for LuminaryFlow projects",
   "type": "module",
   "bin": {
-    "luminary": "./dist/index.js"
+    "luminary": "./dist/index.js",
+    "l": "./dist/index.js"
   },
   "main": "dist/index.js",
   "scripts": {
