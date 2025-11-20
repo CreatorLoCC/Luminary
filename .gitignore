@@ -27,7 +27,17 @@ Thumbs.db
 
 # Project-specific
 .claude/luminary/projects.json
+.claude/settings.local.json
+
+# Temporary files
+*.tmp
+*.temp
+nul
 
 # Logs
 logs/
 *.log
+
+# Internal documentation (keep out of repo)
+*_COMPLETE.md
+*_INTERNAL.md

@@ -2,24 +2,38 @@
 
 **Project Management for Claude Code** - Part of the **[💡 Luminary](https://github.com/CreatorLoCC/Luminary)** ecosystem
 
-An MCP server that gives Claude the ability to track, save, and remember your project specifications and tasks.
+Give Claude persistent memory for your projects. Plan once, remember forever.
 
 ---
 
 **Built by**: [Luminary](https://github.com/CreatorLoCC/Luminary) - Solo AI Dev Company
 **Tagline**: *"Illuminate Your Development Workflow"*
 
-## 🎯 What Problem Does This Solve?
+## ⚡ Quick Start
 
-When working with Claude Code, you often:
-- ✨ Create amazing specs during `/start:specify` sessions
-- 📋 Plan out tasks and implementation details
-- 💭 Then... forget everything when the session ends
+```bash
+# 1. Install & build
+npm install && npm run build
 
-**LuminaryFlow fixes this!** It provides Claude with tools to:
-1. **Save project specs** automatically during planning
-2. **Retrieve context** to remember what you were working on
-3. **Track tasks** and their progress across sessions
+# 2. Install CLI globally
+cd packages/cli && npm link
+
+# 3. Use it!
+l status
+```
+
+**That's it!** See [GETTING_STARTED.md](GETTING_STARTED.md) for full guide.
+
+---
+
+## 🎯 What Is This?
+
+**The Problem**: Claude forgets your project plans when the session ends.
+
+**The Solution**: LuminaryFlow gives Claude tools to:
+- 💾 **Save** project specs and tasks
+- 🔄 **Retrieve** context across sessions
+- 📊 **Track** progress over time
 
 ## 🏗️ Architecture
 
