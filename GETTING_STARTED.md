@@ -33,6 +33,12 @@ npm link
 l status
 ```
 
+### Select a Project Interactively
+```bash
+l select
+```
+Pick from a numbered list - easiest way to view project details!
+
 ### List All Tasks
 ```bash
 l tasks
@@ -45,7 +51,7 @@ l tasks --status in-progress
 l tasks --status done
 ```
 
-### View Project Details
+### View Project Details (by ID)
 ```bash
 l context <project-id>
 ```

@@ -58,6 +58,49 @@ l status
 
 ---
 
+### `luminary select` (or `l select`) ⭐ NEW!
+
+Interactively select a project to view full details.
+
+**Example:**
+```bash
+l select
+```
+
+**Output:**
+```
+🎯 Select a Project
+
+1. 📋 AuraMechanics Development [auramechanics-roadmap]
+   ████████░░░░░░░ 50% • 2 hours ago
+
+2. 🔄 Luminary Development Roadmap [luminary-roadmap]
+   ██████░░░░░░░░░ 40% • 2 hours ago
+
+Enter number (or q to quit): 1
+
+📋 AuraMechanics Development
+
+ID: auramechanics-roadmap
+Status: planning
+Source: AuraMechanics
+
+📝 Description:
+Human Design analysis platform with accurate chart calculations...
+
+📊 Progress:
+███████████████░░░░░░░░░░░░░░░ 50% (4/8)
+...
+```
+
+**Why use this?**
+- No need to remember project IDs
+- Quick browsing with numbered selection
+- See overview before drilling down
+- Perfect for daily standup reviews!
+
+---
+
 ### `luminary tasks`
 
 List all tasks across all projects.
@@ -142,11 +185,13 @@ This file is created and managed by the LuminaryFlow MCP server. The CLI provide
 ## 🎨 Features
 
 - ✅ **Beautiful output** with colors and emojis
+- ✅ **Interactive project selection** with numbered menus
 - ✅ **Progress visualization** with ASCII progress bars
 - ✅ **Smart time formatting** (relative times like "3 hours ago")
 - ✅ **Task filtering** by status
 - ✅ **Cross-project task views**
 - ✅ **Detailed project context**
+- ✅ **Workspace-aware** scanning for multi-project setups
 
 ## 🛠️ Development
 
@@ -172,8 +217,10 @@ packages/cli/
 ├── src/
 │   ├── commands/
 │   │   ├── status.ts    # Status command implementation
+│   │   ├── select.ts    # Interactive project selector (NEW!)
 │   │   ├── tasks.ts     # Tasks command implementation
 │   │   └── context.ts   # Context command implementation
+│   ├── workspace-scanner.ts  # Multi-project workspace scanning
 │   ├── storage.ts       # Storage utilities
 │   ├── format.ts        # Formatting utilities
 │   └── index.ts         # CLI entry point

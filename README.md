@@ -82,7 +82,7 @@ l status
 
 ## ✨ Features
 
-### 💻 CLI Viewer (NEW!)
+### 💻 CLI Viewer
 
 View your project data from the command line:
 
@@ -90,13 +90,16 @@ View your project data from the command line:
 # View all projects
 luminary status
 
+# Select a project interactively ⭐
+luminary select
+
 # List all tasks
 luminary tasks
 
 # Filter tasks by status
 luminary tasks --status todo
 
-# View project details
+# View project details (by ID)
 luminary context user-auth
 ```
 
@@ -366,23 +369,23 @@ This project is perfect for learning:
 
 ## 🔮 Future Enhancements
 
-### Phase 2: CLI Viewer (Coming Soon!)
-```bash
-luminary status              # View all projects
-luminary tasks               # List all tasks
-luminary context <id>        # Show project details
-```
+### Phase 2: Enhanced CLI Features
+- Task time tracking
+- Task dependencies
+- Batch task updates
+- Export to Markdown
 
 ### Phase 3: TUI Dashboard
 - Real-time visual dashboard
 - Task kanban board
-- Progress visualization
+- Interactive progress visualization
+- Keyboard shortcuts
 
 ### Phase 4: Advanced Features
-- Multiple project workspaces
-- Task dependencies
-- Export to Markdown
-- Git integration
+- Git integration (commit linking)
+- Project templates
+- Custom task statuses
+- Team collaboration features
 
 ## 🐛 Troubleshooting
 

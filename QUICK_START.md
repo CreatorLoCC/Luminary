@@ -55,12 +55,18 @@ You should see your projects listed!
 l status
 ```
 
+### Select a Project Interactively ⭐
+```bash
+l select
+```
+Pick from a numbered list - no need to remember project IDs!
+
 ### View All Tasks
 ```bash
 l tasks
 ```
 
-### View Specific Project
+### View Specific Project (by ID)
 ```bash
 l context <project-id>
 ```

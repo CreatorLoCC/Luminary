@@ -5,6 +5,7 @@
  *
  * Usage:
  *   luminary status              - View all projects
+ *   luminary select              - Pick a project interactively
  *   luminary tasks               - List all tasks
  *   luminary tasks --status todo - Filter tasks by status
  *   luminary context <id>        - Show project details
@@ -15,6 +16,7 @@ import chalk from 'chalk';
 import { statusCommand } from './commands/status.js';
 import { tasksCommand } from './commands/tasks.js';
 import { contextCommand } from './commands/context.js';
+import { selectCommand } from './commands/select.js';
 
 const program = new Command();
 
@@ -69,11 +71,25 @@ program
     }
   });
 
+// luminary select
+program
+  .command('select')
+  .description('Interactively select a project to view')
+  .action(async () => {
+    try {
+      await selectCommand();
+    } catch (error) {
+      console.error(chalk.red('Error:'), error instanceof Error ? error.message : error);
+      process.exit(1);
+    }
+  });
+
 // Default action - show help if no command provided
 program.action(() => {
   console.log(chalk.bold.cyan('\n🚀 LuminaryFlow CLI\n'));
   console.log(chalk.dim('Available commands:\n'));
   console.log('  luminary status              - View all projects');
+  console.log('  luminary select              - Pick a project interactively');
   console.log('  luminary tasks               - List all tasks');
   console.log('  luminary tasks --status todo - Filter tasks by status');
   console.log('  luminary context <id>        - Show project details');

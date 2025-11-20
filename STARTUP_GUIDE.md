@@ -113,6 +113,9 @@ That's your command to see everything at a glance!
 # View all projects with progress
 l status
 
+# Select a project interactively (no ID needed!)
+l select
+
 # List all tasks across all projects
 l tasks
 
@@ -121,7 +124,7 @@ l tasks --status todo
 l tasks --status in-progress
 l tasks --status done
 
-# View specific project details
+# View specific project details (if you know the ID)
 l context <project-id>
 ```
 
