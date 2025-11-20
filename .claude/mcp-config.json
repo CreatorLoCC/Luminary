@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "luminaryflow": {
+      "command": "node",
+      "args": [
+        "C:\\Users\\rajan\\Projects\\LuminaryLightSpace\\packages\\mcp-server\\dist\\index.js"
+      ],
+      "env": {}
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python:*)",
+      "SlashCommand(/start:init)",
+      "Bash(git init:*)",
+      "Bash(bash \"C:\\Users\\rajan\\.claude\\statusline.sh\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

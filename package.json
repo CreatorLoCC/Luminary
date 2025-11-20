@@ -1,0 +1,21 @@
+{
+  "name": "luminaryflow",
+  "version": "0.1.0",
+  "description": "Project management tools for Claude Code",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build -w @luminaryflow/mcp-server",
+    "dev": "npm run dev -w @luminaryflow/mcp-server",
+    "clean": "rm -rf packages/*/dist packages/*/node_modules node_modules"
+  },
+  "keywords": [
+    "claude-code",
+    "mcp",
+    "project-management"
+  ],
+  "author": "",
+  "license": "MIT"
+}
