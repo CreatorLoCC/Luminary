@@ -42,6 +42,34 @@ When working with Claude Code, you often:
 
 ## ✨ Features
 
+### 💻 CLI Viewer (NEW!)
+
+View your project data from the command line:
+
+```bash
+# View all projects
+luminary status
+
+# List all tasks
+luminary tasks
+
+# Filter tasks by status
+luminary tasks --status todo
+
+# View project details
+luminary context user-auth
+```
+
+**Installation:**
+```bash
+cd packages/cli
+npm install
+npm run build
+npm link  # Make 'luminary' available globally
+```
+
+See [CLI Documentation](packages/cli/README.md) for details.
+
 ### 🔧 MCP Tools (Available to Claude)
 
 #### `save_spec`
@@ -188,18 +216,31 @@ Claude: "You have 3 projects:
 ```
 LuminaryLightSpace/
 ├── packages/
-│   └── mcp-server/              # MCP Server implementation
+│   ├── mcp-server/              # MCP Server implementation
+│   │   ├── src/
+│   │   │   ├── index.ts         # Server entry point
+│   │   │   ├── storage/         # JSON file storage
+│   │   │   │   ├── types.ts     # TypeScript types
+│   │   │   │   └── store.ts     # Storage operations
+│   │   │   └── tools/           # MCP tool implementations
+│   │   │       ├── save-spec.ts
+│   │   │       ├── get-context.ts
+│   │   │       └── list-projects.ts
+│   │   ├── package.json
+│   │   └── tsconfig.json
+│   │
+│   └── cli/                     # CLI Viewer (NEW!)
 │       ├── src/
-│       │   ├── index.ts         # Server entry point
-│       │   ├── storage/         # JSON file storage
-│       │   │   ├── types.ts     # TypeScript types
-│       │   │   └── store.ts     # Storage operations
-│       │   └── tools/           # MCP tool implementations
-│       │       ├── save-spec.ts
-│       │       ├── get-context.ts
-│       │       └── list-projects.ts
+│       │   ├── commands/        # Command implementations
+│       │   │   ├── status.ts    # View all projects
+│       │   │   ├── tasks.ts     # List all tasks
+│       │   │   └── context.ts   # Show project details
+│       │   ├── storage.ts       # Storage utilities
+│       │   ├── format.ts        # Formatting utilities
+│       │   └── index.ts         # CLI entry point
 │       ├── package.json
-│       └── tsconfig.json
+│       ├── tsconfig.json
+│       └── README.md
 │
 ├── .claude/
 │   ├── mcp-config.json          # MCP configuration

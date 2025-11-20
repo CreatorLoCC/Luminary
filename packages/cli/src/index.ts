@@ -1,0 +1,85 @@
+#!/usr/bin/env node
+
+/**
+ * LuminaryFlow CLI - Command-line viewer for project data
+ *
+ * Usage:
+ *   luminary status              - View all projects
+ *   luminary tasks               - List all tasks
+ *   luminary tasks --status todo - Filter tasks by status
+ *   luminary context <id>        - Show project details
+ */
+
+import { Command } from 'commander';
+import chalk from 'chalk';
+import { statusCommand } from './commands/status.js';
+import { tasksCommand } from './commands/tasks.js';
+import { contextCommand } from './commands/context.js';
+
+const program = new Command();
+
+program
+  .name('luminary')
+  .description('CLI viewer for LuminaryFlow project management')
+  .version('0.1.0');
+
+// luminary status
+program
+  .command('status')
+  .description('View all projects with their status and progress')
+  .action(async () => {
+    try {
+      await statusCommand();
+    } catch (error) {
+      console.error(chalk.red('Error:'), error instanceof Error ? error.message : error);
+      process.exit(1);
+    }
+  });
+
+// luminary tasks
+program
+  .command('tasks')
+  .description('List all tasks across all projects')
+  .option('-s, --status <status>', 'Filter by status (todo|in-progress|done)')
+  .action(async (options) => {
+    try {
+      // Validate status option
+      if (options.status && !['todo', 'in-progress', 'done'].includes(options.status)) {
+        console.error(chalk.red('Error: Invalid status. Use: todo, in-progress, or done'));
+        process.exit(1);
+      }
+
+      await tasksCommand({ status: options.status });
+    } catch (error) {
+      console.error(chalk.red('Error:'), error instanceof Error ? error.message : error);
+      process.exit(1);
+    }
+  });
+
+// luminary context <id>
+program
+  .command('context <project-id>')
+  .description('Show detailed context for a specific project')
+  .action(async (projectId: string) => {
+    try {
+      await contextCommand(projectId);
+    } catch (error) {
+      console.error(chalk.red('Error:'), error instanceof Error ? error.message : error);
+      process.exit(1);
+    }
+  });
+
+// Default action - show help if no command provided
+program.action(() => {
+  console.log(chalk.bold.cyan('\n🚀 LuminaryFlow CLI\n'));
+  console.log(chalk.dim('Available commands:\n'));
+  console.log('  luminary status              - View all projects');
+  console.log('  luminary tasks               - List all tasks');
+  console.log('  luminary tasks --status todo - Filter tasks by status');
+  console.log('  luminary context <id>        - Show project details');
+  console.log('');
+  console.log(chalk.dim('Run "luminary --help" for more information\n'));
+});
+
+// Parse arguments
+program.parse();

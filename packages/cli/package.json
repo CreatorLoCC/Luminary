@@ -1,0 +1,32 @@
+{
+  "name": "@luminaryflow/cli",
+  "version": "0.1.0",
+  "description": "CLI viewer for LuminaryFlow projects",
+  "type": "module",
+  "bin": {
+    "luminary": "./dist/index.js"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": [
+    "cli",
+    "luminaryflow",
+    "project-management"
+  ],
+  "author": "CreatorLoCC <thecreator@thelocc.com>",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^11.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  }
+}
