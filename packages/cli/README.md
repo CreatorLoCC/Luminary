@@ -1,6 +1,12 @@
-# 🚀 LuminaryFlow CLI
+# 💻 LuminaryFlow CLI
+
+**Part of the [💡 Luminary](https://github.com/CreatorLoCC/Luminary) ecosystem**
 
 Command-line interface for viewing and managing LuminaryFlow project data.
+
+---
+
+**Built by Luminary** - *"Illuminate Your Development Workflow"*
 
 ## 📦 Installation
 
@@ -184,3 +190,17 @@ packages/cli/
 ## 📝 License
 
 MIT
+
+---
+
+<div align="center">
+
+**Part of the 💡 Luminary ecosystem**
+
+[Main Repository](https://github.com/CreatorLoCC/Luminary) | [More Projects](https://github.com/CreatorLoCC) | [Contact](mailto:thecreator@thelocc.com)
+
+Built with ❤️ and AI by **Luminary**
+
+*"Solo Dev. Startup Energy. Production Quality."*
+
+</div>

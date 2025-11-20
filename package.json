@@ -16,8 +16,18 @@
   "keywords": [
     "claude-code",
     "mcp",
-    "project-management"
+    "project-management",
+    "luminary",
+    "ai-tools"
   ],
-  "author": "",
-  "license": "MIT"
+  "author": "CreatorLoCC <thecreator@thelocc.com> (https://github.com/CreatorLoCC)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CreatorLoCC/Luminary.git"
+  },
+  "homepage": "https://github.com/CreatorLoCC/Luminary#readme",
+  "bugs": {
+    "url": "https://github.com/CreatorLoCC/Luminary/issues"
+  }
 }

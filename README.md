@@ -1,6 +1,13 @@
-# 🚀 LuminaryFlow
+# 🌊 LuminaryFlow
 
-**Project Management for Claude Code** - An MCP server that gives Claude the ability to track, save, and remember your project specifications and tasks.
+**Project Management for Claude Code** - Part of the **[💡 Luminary](https://github.com/CreatorLoCC/Luminary)** ecosystem
+
+An MCP server that gives Claude the ability to track, save, and remember your project specifications and tasks.
+
+---
+
+**Built by**: [Luminary](https://github.com/CreatorLoCC/Luminary) - Solo AI Dev Company
+**Tagline**: *"Illuminate Your Development Workflow"*
 
 ## 🎯 What Problem Does This Solve?
 
@@ -393,10 +400,35 @@ MIT License - feel free to use and modify!
 
 - Built with the [Model Context Protocol SDK](https://github.com/modelcontextprotocol)
 - Inspired by the Claude Code community
-- Created as a learning project for working with AI-assisted development
+- Developed with AI-assisted workflows
 
 ---
 
+## 💡 About Luminary
+
+LuminaryFlow is part of the **Luminary** ecosystem - a solo AI dev company building production-ready, open-source tools for developers.
+
+**Other Luminary Projects**:
+- 🌊 LuminaryFlow (this project) - Project management for Claude Code
+- 🔮 More coming soon...
+
+**Connect**:
+- 🐙 GitHub: [@CreatorLoCC](https://github.com/CreatorLoCC)
+- 📧 Email: thecreator@thelocc.com
+- 🏢 Company: [Luminary](https://github.com/CreatorLoCC/Luminary)
+
+**Motto**: *"Solo Dev. Startup Energy. Production Quality."*
+
+---
+
+<div align="center">
+
 **Happy coding with LuminaryFlow! 🚀**
 
-Questions or feedback? Open an issue!
+Questions or feedback? [Open an issue](https://github.com/CreatorLoCC/Luminary/issues)!
+
+Built with ❤️ and AI by **💡 Luminary**
+
+© 2025 Luminary | CreatorLoCC
+
+</div>
