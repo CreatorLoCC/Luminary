@@ -1,16 +1,16 @@
 /**
  * MCP Tool: list_projects
- * Shows all tracked projects
+ * Shows all tracked projects across the workspace
  */
 
-import { listAllProjects } from '../storage/store.js';
+import { scanWorkspaceProjects } from '../storage/workspace-scanner.js';
 
 /**
  * Handler for list_projects tool
  */
 export async function handleListProjects(): Promise<string> {
   try {
-    const projects = await listAllProjects();
+    const projects = await scanWorkspaceProjects();
 
     if (projects.length === 0) {
       return `📂 No projects tracked yet.
@@ -31,6 +31,7 @@ Use the save_spec tool to start tracking your first project!`;
 
         return `${statusIcon} [${project.id}] ${project.title}
    Status: ${project.status} | Progress: ${progress}% (${completedTasks}/${totalTasks})
+   Source: ${project.sourceDir}
    Updated: ${new Date(project.updatedAt).toLocaleString()}`;
       })
       .join('\n\n');

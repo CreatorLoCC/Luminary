@@ -11,18 +11,29 @@ Give Claude persistent memory for your projects. Plan once, remember forever.
 
 ## ⚡ Quick Start
 
+### One-Command Setup
 ```bash
-# 1. Install & build
-npm install && npm run build
+npm run setup
+```
 
-# 2. Install CLI globally
-cd packages/cli && npm link
+### Initialize Your Project
+```bash
+# Method 1: Automatic script
+npm run init-project /path/to/your/project
 
-# 3. Use it!
+# Method 2: Use /lls in Claude Code
+/lls
+
+# Method 3: Run directly
+node scripts/init-project.js
+```
+
+### Verify It Works
+```bash
 l status
 ```
 
-**That's it!** See [GETTING_STARTED.md](GETTING_STARTED.md) for full guide.
+**That's it!** See [QUICK_START.md](QUICK_START.md) or [INSTALL.md](INSTALL.md) for details.
 
 ---
 

@@ -4,6 +4,7 @@
 
 import chalk from 'chalk';
 import { getAllProjects, projectsFileExists } from '../storage.js';
+import { scanWorkspace } from '../workspace-scanner.js';
 import {
   getProjectStatusIcon,
   calculateProgress,
@@ -12,9 +13,10 @@ import {
 } from '../format.js';
 
 export async function statusCommand(): Promise<void> {
-  // Check if projects file exists
-  const exists = await projectsFileExists();
-  if (!exists) {
+  // Scan the entire workspace for all projects
+  const workspaceData = await scanWorkspace();
+
+  if (workspaceData.projects.length === 0) {
     console.log(chalk.yellow('📂 No projects tracked yet.'));
     console.log(chalk.dim('\nUse the MCP server tools to create your first project!'));
     console.log(chalk.dim('Path: .claude/luminary/projects.json'));
@@ -22,12 +24,7 @@ export async function statusCommand(): Promise<void> {
   }
 
   // Load all projects
-  const projects = await getAllProjects();
-
-  if (projects.length === 0) {
-    console.log(chalk.yellow('📂 No projects tracked yet.'));
-    return;
-  }
+  const projects = workspaceData.projects;
 
   // Sort by most recently updated
   const sortedProjects = projects.sort(
@@ -58,9 +55,10 @@ export async function statusCommand(): Promise<void> {
       `${chalk.dim(`(${completedTasks}/${totalTasks})`)}`
     );
 
-    // Last updated line
+    // Last updated line with source directory
     console.log(
-      `   ${chalk.dim('Updated:')} ${formatRelativeTime(project.updatedAt)}`
+      `   ${chalk.dim('Updated:')} ${formatRelativeTime(project.updatedAt)} ` +
+      `${chalk.dim('|')} ${chalk.dim('Source:')} ${chalk.dim(project.sourceDir)}`
     );
 
     // Add spacing between projects (but not after the last one)

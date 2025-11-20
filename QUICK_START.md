@@ -1,0 +1,113 @@
+# ⚡ Luminary Quick Start
+
+**Get Luminary running in under 60 seconds!**
+
+---
+
+## 🚀 One-Time Setup (LuminaryLightSpace)
+
+```bash
+cd /path/to/LuminaryLightSpace
+npm run setup
+```
+
+**Done!** The `l` command is now available globally.
+
+---
+
+## 🎯 Initialize Any Project
+
+### Option 1: Automatic Script
+```bash
+cd /path/to/your/project
+node /path/to/LuminaryLightSpace/scripts/init-project.js
+```
+
+### Option 2: From LuminaryLightSpace
+```bash
+cd /path/to/LuminaryLightSpace
+npm run init-project /path/to/your/project
+```
+
+### Option 3: Use `/lls` in Claude Code
+1. Navigate to your project directory in Claude Code
+2. Run: `/lls`
+3. Claude will auto-initialize everything!
+
+**Note**: The `/lls` command may require restarting Claude Code after first copying the command file.
+
+---
+
+## ✅ Verify It Works
+
+```bash
+l status
+```
+
+You should see your projects listed!
+
+---
+
+## 🎨 Daily Usage
+
+### View All Projects
+```bash
+l status
+```
+
+### View All Tasks
+```bash
+l tasks
+```
+
+### View Specific Project
+```bash
+l context <project-id>
+```
+
+### Filter Tasks by Status
+```bash
+l tasks --status todo
+l tasks --status in-progress
+l tasks --status done
+```
+
+---
+
+## 💡 Working with Claude
+
+Once initialized, Claude can:
+- **Save project specs** using the `save_spec` MCP tool
+- **Retrieve context** using the `get_context` MCP tool
+- **List all projects** using the `list_projects` MCP tool
+
+Just ask Claude to help plan your project, and it will automatically track everything!
+
+---
+
+## 🌟 Workspace Mode
+
+Luminary automatically aggregates ALL projects in your workspace!
+
+```
+Projects/
+  ├── project-1/.claude/luminary/
+  ├── project-2/.claude/luminary/
+  └── project-3/.claude/luminary/
+```
+
+Run `l status` from **anywhere** and see all 3 projects! 🎉
+
+---
+
+## 🆘 Need Help?
+
+- **CLI not found?** → Run `npm run setup` from LuminaryLightSpace
+- **Projects not showing?** → Check `.claude/luminary/projects.json` exists
+- **MCP not working?** → Verify `.claude/mcp-config.json` has correct path
+
+📚 Full docs: [INSTALL.md](INSTALL.md)
+
+---
+
+**Now go build something amazing!** 💪
