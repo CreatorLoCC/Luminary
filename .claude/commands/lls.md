@@ -59,7 +59,7 @@ In the **current working directory**, create:
 ```
 
 ### Step 4: Link CLI (Global Install)
-Make the `l` command available globally:
+Make the `lm` command available globally:
 ```bash
 cd <path-to-LuminarySmartSpace>/packages/cli
 npm link
@@ -68,7 +68,7 @@ npm link
 ### Step 5: Verify Installation
 Run a quick verification:
 ```bash
-l status
+lm status
 ```
 
 ### Step 6: Success Message
@@ -80,13 +80,13 @@ Display a completion message:
 ✅ Packages built
 ✅ Project structure initialized (.claude/luminary/)
 ✅ MCP server configured
-✅ CLI linked (l command available globally)
+✅ CLI linked (lm command available globally)
 
 📂 Your project is now tracked by Luminary!
 
 Next steps:
-  • Run: l status          - View all projects
-  • Run: l tasks           - List all tasks
+  • Run: lm status          - View all projects
+  • Run: lm tasks           - List all tasks
   • Ask Claude to help you plan your next feature!
 
 💡 Claude can now use Luminary MCP tools to save and track your work across sessions.

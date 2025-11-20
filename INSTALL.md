@@ -15,7 +15,7 @@ npm run setup
 That's it! This will:
 - ✅ Install all dependencies
 - ✅ Build MCP server and CLI packages
-- ✅ Link the `l` command globally
+- ✅ Link the `lm` command globally
 
 ---
 
@@ -89,7 +89,7 @@ your-project/
 
 ### Check CLI is Available
 ```bash
-l status
+lm status
 ```
 
 You should see:
@@ -119,13 +119,13 @@ Projects/
       └── .claude/luminary/
 ```
 
-Running `l status` from **anywhere** will show ALL projects!
+Running `lm status` from **anywhere** will show ALL projects!
 
 ---
 
 ## Troubleshooting
 
-### Command `l` not found
+### Command `lm` not found
 
 The CLI wasn't linked globally. Run:
 ```bash
@@ -150,7 +150,7 @@ npm link
 
 1. Make sure `.claude/luminary/projects.json` exists
 2. Check the file is valid JSON
-3. Run `l status` to see all projects across workspace
+3. Run `lm status` to see all projects across workspace
 
 ---
 

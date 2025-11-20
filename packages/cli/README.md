@@ -25,22 +25,22 @@ npm run build
 # From the CLI package directory
 npm link
 
-# Now you can use 'luminary' or the shorthand 'l' from anywhere!
+# Now you can use 'luminary' or the shorthand 'lm' from anywhere!
 luminary status
-l status        # Shorthand - same command, fewer keystrokes!
+lm status        # Shorthand - same command, fewer keystrokes!
 ```
 
 ## 🎯 Commands
 
-**Tip**: Use `l` as shorthand for `luminary` - e.g., `l status` instead of `luminary status`!
+**Tip**: Use `lm` as shorthand for `luminary` - e.g., `lm status` instead of `luminary status`!
 
-### `luminary status` (or `l status`)
+### `luminary status` (or `lm status`)
 
 View all projects with their status and progress.
 
 **Example:**
 ```bash
-l status
+lm status
 ```
 
 **Output:**
@@ -58,13 +58,13 @@ l status
 
 ---
 
-### `luminary select` (or `l select`) ⭐ NEW!
+### `luminary select` (or `lm select`) ⭐ NEW!
 
 Interactively select a project to view full details.
 
 **Example:**
 ```bash
-l select
+lm select
 ```
 
 **Output:**

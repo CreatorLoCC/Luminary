@@ -5,7 +5,7 @@
   "type": "module",
   "bin": {
     "luminary": "./dist/index.js",
-    "l": "./dist/index.js"
+    "lm": "./dist/index.js"
   },
   "main": "dist/index.js",
   "scripts": {

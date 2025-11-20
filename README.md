@@ -13,7 +13,7 @@ Give Claude persistent memory for your projects. Plan once, remember forever.
 
 ### New User? Start Here! 👋
 
-**[📖 Read the Startup Guide](STARTUP_GUIDE.md)** - Complete walkthrough from zero to `l status`
+**[📖 Read the Startup Guide](STARTUP_GUIDE.md)** - Complete walkthrough from zero to `lm status`
 
 ### Already Know What to Do?
 
@@ -29,7 +29,7 @@ npm run setup
 /lls
 
 # 4. Check it works
-l status
+lm status
 ```
 
 **That's it!** ✨

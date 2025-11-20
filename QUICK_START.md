@@ -11,7 +11,7 @@ cd /path/to/LuminarySmartSpace
 npm run setup
 ```
 
-**Done!** The `l` command is now available globally.
+**Done!** The `lm` command is now available globally.
 
 ---
 
@@ -41,7 +41,7 @@ npm run init-project /path/to/your/project
 ## ✅ Verify It Works
 
 ```bash
-l status
+lm status
 ```
 
 You should see your projects listed!
@@ -52,30 +52,30 @@ You should see your projects listed!
 
 ### View All Projects
 ```bash
-l status
+lm status
 ```
 
 ### Select a Project Interactively ⭐
 ```bash
-l select
+lm select
 ```
 Pick from a numbered list - no need to remember project IDs!
 
 ### View All Tasks
 ```bash
-l tasks
+lm tasks
 ```
 
 ### View Specific Project (by ID)
 ```bash
-l context <project-id>
+lm context <project-id>
 ```
 
 ### Filter Tasks by Status
 ```bash
-l tasks --status todo
-l tasks --status in-progress
-l tasks --status done
+lm tasks --status todo
+lm tasks --status in-progress
+lm tasks --status done
 ```
 
 ---
@@ -102,7 +102,7 @@ Projects/
   └── project-3/.claude/luminary/
 ```
 
-Run `l status` from **anywhere** and see all 3 projects! 🎉
+Run `lm status` from **anywhere** and see all 3 projects! 🎉
 
 ---
 

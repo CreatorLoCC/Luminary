@@ -27,7 +27,7 @@
 - [x] `npm run setup` script exists and works
 - [x] CLI can be globally linked
 - [x] MCP server builds successfully
-- [x] `l status` command works after setup
+- [x] `lm status` command works after setup
 
 ## 📦 Package Structure
 
@@ -71,7 +71,7 @@ git commit -m "Add comprehensive startup documentation and update README
 - Add pre-push checklist for future contributions
 - Clean up stray artifacts
 
-New users can now go from zero to 'l status' in under 2 minutes!
+New users can now go from zero to 'lm status' in under 2 minutes!
 
 🤖 Generated with Claude Code
 Co-Authored-By: Claude <noreply@anthropic.com>"

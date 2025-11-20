@@ -138,9 +138,9 @@ async function initProject(targetDir = process.cwd()) {
   log('✅ MCP server configured', colors.green);
   log('');
   log('📚 Next Steps:', colors.bright);
-  log('   1. Run: l status                    (view projects)', colors.dim);
+  log('   1. Run: lm status                    (view projects)', colors.dim);
   log('   2. Ask Claude to help you plan!     (use MCP tools)', colors.dim);
-  log('   3. Run: l tasks                     (see all tasks)', colors.dim);
+  log('   3. Run: lm tasks                     (see all tasks)', colors.dim);
   log('');
   log('💡 Claude can now track your projects across sessions!', colors.cyan);
   log('');

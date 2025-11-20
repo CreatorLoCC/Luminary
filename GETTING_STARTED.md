@@ -22,7 +22,7 @@ cd packages/cli
 npm link
 ```
 
-**Done!** You now have the `l` command available globally. ⚡
+**Done!** You now have the `lm` command available globally. ⚡
 
 ---
 
@@ -30,30 +30,30 @@ npm link
 
 ### View All Projects
 ```bash
-l status
+lm status
 ```
 
 ### Select a Project Interactively
 ```bash
-l select
+lm select
 ```
 Pick from a numbered list - easiest way to view project details!
 
 ### List All Tasks
 ```bash
-l tasks
+lm tasks
 ```
 
 ### Filter Tasks
 ```bash
-l tasks --status todo
-l tasks --status in-progress
-l tasks --status done
+lm tasks --status todo
+lm tasks --status in-progress
+lm tasks --status done
 ```
 
 ### View Project Details (by ID)
 ```bash
-l context <project-id>
+lm context <project-id>
 ```
 
 ---
@@ -115,16 +115,16 @@ This file is automatically created and managed by the MCP server.
 ### Workflow 1: Planning a New Project
 1. Ask Claude to help you plan
 2. Claude uses `save_spec` to store the project
-3. Use `l status` to view your project
+3. Use `lm status` to view your project
 
 ### Workflow 2: Continuing Work
-1. Run `l tasks --status todo` to see what's next
+1. Run `lm tasks --status todo` to see what's next
 2. Pick a task and work on it
 3. Ask Claude to update the task status
 
 ### Workflow 3: Checking Progress
-1. Run `l status` for overview
-2. Run `l context <project-id>` for details
+1. Run `lm status` for overview
+2. Run `lm context <project-id>` for details
 3. Celebrate completed tasks! 🎉
 
 ---
@@ -161,7 +161,7 @@ Check that `.claude/luminary/projects.json` exists and is valid JSON.
 
 ## 💡 Tips
 
-- **Shorthand**: Use `l` instead of `luminary` for speed
+- **Shorthand**: Use `lm` instead of `luminary` for speed
 - **Filter**: Use `--status` to focus on specific tasks
 - **JSON**: Edit `.claude/luminary/projects.json` directly if needed
 - **Backup**: The projects.json file is gitignored - back it up!

@@ -1,6 +1,6 @@
 # 🚀 LuminarySmartSpace Startup Guide
 
-**The definitive guide for new users** - From zero to `l status` in under 2 minutes!
+**The definitive guide for new users** - From zero to `ls status` in under 2 minutes!
 
 ---
 
@@ -8,8 +8,8 @@
 
 By the end of this guide, you'll have:
 - ✅ LuminarySmartSpace installed and built
-- ✅ The `l` command available globally in any terminal
-- ✅ Your projects tracked and visible with `l status`
+- ✅ The `lm` command available globally in any terminal
+- ✅ Your projects tracked and visible with `lm status`
 - ✅ Claude Code integrated with MCP tools for persistent project memory
 
 ---
@@ -41,7 +41,7 @@ npm run setup
 This single command will:
 - Install all dependencies
 - Build the MCP server and CLI packages
-- Link the `l` command globally
+- Link the `lm` command globally
 
 **That's it for the LuminarySmartSpace installation!** ✨
 
@@ -79,7 +79,7 @@ You'll see a success message like:
 ✅ Packages built
 ✅ Project structure initialized (.claude/luminary/)
 ✅ MCP server configured
-✅ CLI linked (l command available globally)
+✅ CLI linked (lm command available globally)
 ```
 
 ### Step 5: Test It Out
@@ -87,7 +87,7 @@ You'll see a success message like:
 Open a **fresh terminal** and run:
 
 ```bash
-l status
+lm status
 ```
 
 You should see your projects listed! 🎉
@@ -102,7 +102,7 @@ Once set up, here's how you use LuminarySmartSpace every day:
 
 Just run:
 ```bash
-l status
+lm status
 ```
 
 That's your command to see everything at a glance!
@@ -111,21 +111,21 @@ That's your command to see everything at a glance!
 
 ```bash
 # View all projects with progress
-l status
+lm status
 
 # Select a project interactively (no ID needed!)
-l select
+lm select
 
 # List all tasks across all projects
-l tasks
+lm tasks
 
 # Filter tasks by status
-l tasks --status todo
-l tasks --status in-progress
-l tasks --status done
+lm tasks --status todo
+lm tasks --status in-progress
+lm tasks --status done
 
 # View specific project details (if you know the ID)
-l context <project-id>
+lm context <project-id>
 ```
 
 ### Working with Claude
@@ -153,8 +153,8 @@ The `/lls` command is a **Luminary Launch System** that:
 3. **Builds Packages**: Compiles TypeScript to JavaScript
 4. **Initializes Structure**: Creates `.claude/luminary/projects.json`
 5. **Configures MCP**: Sets up `.claude/mcp-config.json` with the correct path
-6. **Links CLI**: Makes `l` command available globally
-7. **Verifies**: Tests that `l status` works
+6. **Links CLI**: Makes `lm` command available globally
+7. **Verifies**: Tests that `lm status` works
 
 ### Where Your Data Lives
 
@@ -201,18 +201,7 @@ This file contains:
 
 ## 🐛 Troubleshooting
 
-### Issue: `l` command runs `git log` instead
-
-**Problem**: Your shell has a git alias `l` that takes precedence.
-
-**Solution**:
-1. Open a fresh terminal (to refresh PATH)
-2. Or run: `unalias l` to remove the git alias
-3. Or use the full path: `/path/to/npm/l status`
-
-To permanently fix, remove the `l` alias from your `.bashrc`, `.zshrc`, or Git config.
-
-### Issue: `l` command not found
+### Issue: `lm` command not found
 
 **Solution**:
 ```bash
@@ -225,7 +214,7 @@ If that doesn't work, check your npm global bin path:
 npm config get prefix
 ```
 
-The `l` command should be in `<prefix>/bin/l`.
+The `lm` command should be in `<prefix>/bin/lm`.
 
 ### Issue: MCP server not connecting in Claude Code
 
@@ -246,7 +235,7 @@ The `l` command should be in `<prefix>/bin/l`.
 **Solution**:
 1. Check `.claude/luminary/projects.json` exists
 2. Verify it contains valid JSON
-3. Try running `l status` from different directories (Luminary scans workspace)
+3. Try running `lm status` from different directories (Luminary scans workspace)
 
 ### Issue: `/lls` command not found in Claude Code
 
@@ -279,15 +268,15 @@ claude
 # 4. Claude saves the spec automatically
 
 # 5. View it in terminal
-l status
-l tasks
+lm status
+lm tasks
 ```
 
 ### Workflow 2: Continuing Work Across Sessions
 
 ```bash
 # Morning: Check what's pending
-l tasks --status todo
+lm tasks --status todo
 
 # Pick a task and work on it
 # ...
@@ -304,7 +293,7 @@ l tasks --status todo
 
 ```bash
 # You have multiple projects tracked
-l status
+lm status
 
 # Output:
 # 📂 LuminarySmartSpace Projects (3 total)
@@ -319,7 +308,7 @@ l status
 #    Status: completed | Progress: ██████████ 100%
 
 # View specific project
-l context blog-platform
+lm context blog-platform
 ```
 
 ---
@@ -370,7 +359,7 @@ EOF
 # Remember to replace /absolute/path/to/LuminarySmartSpace with your actual path!
 
 # 6. Test
-l status
+lm status
 ```
 
 ### Workspace Mode (Multiple Projects)
@@ -388,7 +377,7 @@ Projects/
       └── .claude/luminary/    # Project 3 tracking
 ```
 
-Running `l status` from **anywhere** shows ALL projects! 🎉
+Running `lm status` from **anywhere** shows ALL projects! 🎉
 
 ---
 
@@ -434,8 +423,8 @@ Running `l status` from **anywhere** shows ALL projects! 🎉
 
 Add to your `.bashrc` or `.zshrc`:
 ```bash
-alias ls='l status'    # Quick status check
-alias lt='l tasks'     # Quick task list
+alias lms='lm status'    # Quick status check
+alias lmt='lm tasks'     # Quick task list
 ```
 
 ### Tip 2: Use It for Personal Projects Too
@@ -462,7 +451,7 @@ cp .claude/luminary/projects.json ~/Dropbox/luminary-backup/
 Want to share a project plan with teammates?
 ```bash
 # Extract a specific project
-l context my-project > project-spec.md
+lm context my-project > project-spec.md
 ```
 
 They can then ask Claude to import it into their own LuminarySmartSpace!
@@ -479,7 +468,7 @@ They can then ask Claude to import it into their own LuminarySmartSpace!
 ### Common Questions
 
 **Q: Does LuminarySmartSpace work with other AI assistants?**
-A: The CLI (`l status`, etc.) works standalone. The MCP tools are Claude-specific.
+A: The CLI (`lm status`, etc.) works standalone. The MCP tools are Claude-specific.
 
 **Q: Can I use it without Claude Code?**
 A: Yes! The CLI works independently. You just won't have the MCP integration.
@@ -500,12 +489,12 @@ A: Run `/lls` in each workspace. They'll be tracked separately.
 Congratulations! You now have LuminarySmartSpace set up and ready to use.
 
 **Your next steps**:
-1. Open a terminal and run `l status`
+1. Open a terminal and run `lm status`
 2. Ask Claude to help plan your first project
 3. Watch as Claude automatically tracks your progress
 4. Enjoy persistent project memory across all sessions!
 
-**Remember**: In any fresh terminal, just type `l status` to see your entire project universe! 🚀
+**Remember**: In any fresh terminal, just type `lm status` to see your entire project universe! 🚀
 
 ---
 
