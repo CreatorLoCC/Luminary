@@ -18,13 +18,17 @@ Give Claude persistent memory for your projects. Plan once, remember forever.
 ### Already Know What to Do?
 
 ```bash
-# 1. One-command setup
+# 1. Clone the repo
+git clone https://github.com/CreatorLoCC/Luminary.git
+cd LuminaryLightSpace
+
+# 2. One-command setup
 npm run setup
 
-# 2. Initialize in Claude Code
+# 3. Initialize in Claude Code
 /lls
 
-# 3. Check it works
+# 4. Check it works
 l status
 ```
 
