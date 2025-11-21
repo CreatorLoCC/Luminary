@@ -68,12 +68,11 @@ export async function statusCommand(options?: { interactive?: boolean }): Promis
     }
   });
 
-  // Footer with interactive option
+  // Footer
   console.log(chalk.dim('\n💡 Use "luminary context <id>" to see full project details'));
-  console.log(chalk.dim('💡 Use "luminary tasks" to see all tasks across projects'));
-  console.log(chalk.dim('💡 Use "lm status -i" or "lm status --interactive" to select a project\n'));
+  console.log(chalk.dim('💡 Use "luminary tasks" to see all tasks across projects\n'));
 
-  // If interactive mode requested, launch selector
+  // Interactive mode is now the default!
   if (options?.interactive) {
     await selectAndDisplayProject(sortedProjects);
   }

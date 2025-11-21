@@ -30,10 +30,11 @@ program
 program
   .command('status')
   .description('View all projects with their status and progress')
-  .option('-i, --interactive', 'Interactively select and view a project')
+  .option('--no-interactive', 'Disable interactive project selection')
   .action(async (options) => {
     try {
-      await statusCommand({ interactive: options.interactive });
+      // Interactive is now the default! Use --no-interactive to disable
+      await statusCommand({ interactive: options.interactive !== false });
     } catch (error) {
       console.error(chalk.red('Error:'), error instanceof Error ? error.message : error);
       process.exit(1);
@@ -45,7 +46,7 @@ program
   .command('tasks')
   .description('List all tasks across all projects')
   .option('-s, --status <status>', 'Filter by status (todo|in-progress|done)')
-  .option('-i, --interactive', 'Interactively select and view a project')
+  .option('--no-interactive', 'Disable interactive project selection')
   .action(async (options) => {
     try {
       // Validate status option
@@ -54,7 +55,8 @@ program
         process.exit(1);
       }
 
-      await tasksCommand({ status: options.status, interactive: options.interactive });
+      // Interactive is now the default! Use --no-interactive to disable
+      await tasksCommand({ status: options.status, interactive: options.interactive !== false });
     } catch (error) {
       console.error(chalk.red('Error:'), error instanceof Error ? error.message : error);
       process.exit(1);

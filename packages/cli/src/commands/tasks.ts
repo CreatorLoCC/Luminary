@@ -103,11 +103,10 @@ export async function tasksCommand(options: { status?: string; interactive?: boo
     displayTasks(doneTasks, '✅ Completed', chalk.green);
   }
 
-  // Footer with interactive option
-  console.log(chalk.dim('💡 Use "luminary context <project-id>" to see project details'));
-  console.log(chalk.dim('💡 Use "lm tasks -i" or "lm tasks --interactive" to select a project\n'));
+  // Footer
+  console.log(chalk.dim('💡 Use "luminary context <project-id>" to see project details\n'));
 
-  // If interactive mode requested, launch selector
+  // Interactive mode is now the default!
   if (options.interactive) {
     await selectAndDisplayProject(projects);
   }
