@@ -87,26 +87,28 @@ lm status
 View your project data from the command line:
 
 ```bash
-# View all projects
-lm status              # or: luminary status
+# View all projects (interactive by default - prompts for selection) ⭐
+lm status              # Shows list, then prompts to select
+lm status --no-interactive  # Just show list, no prompt
 
-# Select a project interactively ⭐
-lm select              # or: luminary select
+# Select a project interactively
+lm select              # Direct to selection
 
-# List all tasks
-lm tasks               # or: luminary tasks
-
-# Filter tasks by status
-lm tasks --status todo
+# List all tasks (interactive by default) ⭐
+lm tasks               # Shows tasks, then prompts to select project
+lm tasks --status todo # Filter + interactive selection
+lm tasks --no-interactive  # Just show tasks, no prompt
 
 # View project details (by ID)
-lm context user-auth   # or: luminary context user-auth
+lm context user-auth   # Direct context view
 
 # 🆕 Save completed work from git commits
 lm save                # Auto-analyzes last 24 hours
 lm save --project <id> # Specify project
 lm save --since "2.days.ago"  # Custom time range
 ```
+
+**✨ New in v0.2.0:** Interactive selection is now the DEFAULT! Just run `lm status` or `lm tasks` and you'll be prompted to select a project automatically. Type a number and view full details instantly! 🎯
 
 **Installation:**
 ```bash

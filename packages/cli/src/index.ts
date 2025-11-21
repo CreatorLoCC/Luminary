@@ -113,13 +113,16 @@ program
 program.action(() => {
   console.log(chalk.bold.cyan('\n🚀 LuminarySmartSpace CLI\n'));
   console.log(chalk.dim('Available commands:\n'));
-  console.log('  luminary status              - View all projects');
+  console.log('  luminary status              - View all projects (interactive by default) ⭐');
   console.log('  luminary select              - Pick a project interactively');
-  console.log('  luminary tasks               - List all tasks');
+  console.log('  luminary tasks               - List all tasks (interactive by default) ⭐');
   console.log('  luminary tasks --status todo - Filter tasks by status');
   console.log('  luminary context <id>        - Show project details');
-  console.log('  luminary save                - 🆕 Save completed work from git commits');
+  console.log('  luminary save                - Save completed work from git commits');
   console.log('');
+  console.log(chalk.dim('💡 Tip: Use "lm" as a shorthand (e.g., "lm status")'));
+  console.log(chalk.dim('💡 Interactive mode is on by default - just type a number to select!'));
+  console.log(chalk.dim('💡 Use --no-interactive to disable prompts\n'));
   console.log(chalk.dim('Run "luminary --help" for more information\n'));
 });
 

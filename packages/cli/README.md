@@ -34,9 +34,9 @@ lm status        # Shorthand - same command, fewer keystrokes!
 
 **Tip**: Use `lm` as shorthand for `luminary` - e.g., `lm status` instead of `luminary status`!
 
-### `luminary status` (or `lm status`)
+### `luminary status` (or `lm status`) ⭐
 
-View all projects with their status and progress.
+View all projects with their status and progress. **Interactive by default** - automatically prompts for project selection!
 
 **Example:**
 ```bash
@@ -47,14 +47,20 @@ lm status
 ```
 📂 LuminarySmartSpace Projects (2 total)
 
-🔄  User Authentication System [user-auth]
+1. 🔄  User Authentication System [user-auth]
    Status: in-progress | Progress: █████░░░░░░░░░░ 33% (1/3)
    Updated: 3 hours ago
 
-📋  Blog Platform [blog-platform]
+2. 📋  Blog Platform [blog-platform]
    Status: planning | Progress: ████████░░░░░░░ 50% (1/2)
    Updated: 1 day ago
+
+🎯 Select a Project
+
+Enter number (or q to quit): _
 ```
+
+**New in v0.2.0:** Just type a number to view full project details! Use `--no-interactive` to disable the prompt.
 
 ---
 
@@ -101,9 +107,9 @@ Human Design analysis platform with accurate chart calculations...
 
 ---
 
-### `luminary tasks`
+### `luminary tasks` ⭐
 
-List all tasks across all projects.
+List all tasks across all projects. **Interactive by default** - automatically prompts for project selection after showing tasks!
 
 **Example:**
 ```bash
@@ -124,14 +130,21 @@ Summary:
 ⬜ Todo
   ⬜  Add refresh token logic [user-auth/3]
       Project: User Authentication System
+
+🎯 Select a Project
+
+Enter number (or q to quit): _
 ```
 
 **Filter by status:**
 ```bash
-luminary tasks --status todo
+luminary tasks --status todo           # Interactive by default
+luminary tasks --no-interactive        # Just show tasks, no prompt
 luminary tasks --status in-progress
 luminary tasks --status done
 ```
+
+**New in v0.2.0:** After viewing tasks, you're prompted to select a project for full details!
 
 ---
 
@@ -185,13 +198,15 @@ This file is created and managed by the LuminarySmartSpace MCP server. The CLI p
 ## 🎨 Features
 
 - ✅ **Beautiful output** with colors and emojis
-- ✅ **Interactive project selection** with numbered menus
+- ✅ **Interactive by default** - prompts for selection automatically ⭐ NEW!
+- ✅ **Reusable selector utility** - consistent UX across all commands
 - ✅ **Progress visualization** with ASCII progress bars
 - ✅ **Smart time formatting** (relative times like "3 hours ago")
 - ✅ **Task filtering** by status
 - ✅ **Cross-project task views**
 - ✅ **Detailed project context**
 - ✅ **Workspace-aware** scanning for multi-project setups
+- ✅ **Git integration** with `lm save` command
 
 ## 🛠️ Development
 
