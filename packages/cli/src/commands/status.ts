@@ -11,8 +11,9 @@ import {
   formatProgressBar,
   formatRelativeTime,
 } from '../format.js';
+import { selectAndDisplayProject } from '../interactive-selector.js';
 
-export async function statusCommand(): Promise<void> {
+export async function statusCommand(options?: { interactive?: boolean }): Promise<void> {
   // Scan the entire workspace for all projects
   const workspaceData = await scanWorkspace();
 
@@ -67,7 +68,13 @@ export async function statusCommand(): Promise<void> {
     }
   });
 
-  // Footer
+  // Footer with interactive option
   console.log(chalk.dim('\n💡 Use "luminary context <id>" to see full project details'));
-  console.log(chalk.dim('💡 Use "luminary tasks" to see all tasks across projects\n'));
+  console.log(chalk.dim('💡 Use "luminary tasks" to see all tasks across projects'));
+  console.log(chalk.dim('💡 Use "lm status -i" or "lm status --interactive" to select a project\n'));
+
+  // If interactive mode requested, launch selector
+  if (options?.interactive) {
+    await selectAndDisplayProject(sortedProjects);
+  }
 }

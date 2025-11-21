@@ -6,13 +6,14 @@ import chalk from 'chalk';
 import { getAllProjects, projectsFileExists } from '../storage.js';
 import { getTaskStatusIcon } from '../format.js';
 import type { Task } from '../storage.js';
+import { selectAndDisplayProject } from '../interactive-selector.js';
 
 interface TaskWithProject extends Task {
   projectId: string;
   projectTitle: string;
 }
 
-export async function tasksCommand(options: { status?: string } = {}): Promise<void> {
+export async function tasksCommand(options: { status?: string; interactive?: boolean } = {}): Promise<void> {
   // Check if projects file exists
   const exists = await projectsFileExists();
   if (!exists) {
@@ -102,6 +103,12 @@ export async function tasksCommand(options: { status?: string } = {}): Promise<v
     displayTasks(doneTasks, '✅ Completed', chalk.green);
   }
 
-  // Footer
-  console.log(chalk.dim('💡 Use "luminary context <project-id>" to see project details\n'));
+  // Footer with interactive option
+  console.log(chalk.dim('💡 Use "luminary context <project-id>" to see project details'));
+  console.log(chalk.dim('💡 Use "lm tasks -i" or "lm tasks --interactive" to select a project\n'));
+
+  // If interactive mode requested, launch selector
+  if (options.interactive) {
+    await selectAndDisplayProject(projects);
+  }
 }
