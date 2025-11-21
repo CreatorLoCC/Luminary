@@ -1,7 +1,7 @@
 {
   "name": "@luminarysmartspace/cli",
-  "version": "0.1.0",
-  "description": "CLI viewer for LuminarySmartSpace projects",
+  "version": "0.2.0",
+  "description": "CLI viewer for LuminarySmartSpace projects with git integration",
   "type": "module",
   "bin": {
     "luminary": "./dist/index.js",

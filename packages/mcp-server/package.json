@@ -1,7 +1,7 @@
 {
   "name": "@luminarysmartspace/mcp-server",
-  "version": "0.1.0",
-  "description": "MCP server for LuminarySmartSpace - Project management for Claude Code",
+  "version": "0.2.0",
+  "description": "MCP server for LuminarySmartSpace - Project management for Claude Code with git sync",
   "type": "module",
   "main": "dist/index.js",
   "scripts": {

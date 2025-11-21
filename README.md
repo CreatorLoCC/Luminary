@@ -101,6 +101,11 @@ lm tasks --status todo
 
 # View project details (by ID)
 lm context user-auth   # or: luminary context user-auth
+
+# 🆕 Save completed work from git commits
+lm save                # Auto-analyzes last 24 hours
+lm save --project <id> # Specify project
+lm save --since "2.days.ago"  # Custom time range
 ```
 
 **Installation:**
@@ -162,6 +167,23 @@ Returns:
 - All projects sorted by update time
 - Progress percentages
 - Quick status overview
+```
+
+#### `sync_work` 🆕
+Retroactively document completed work by analyzing git commits.
+
+**Usage by Claude:**
+```
+When work was done outside normal workflow:
+sync_work({
+  projectId: "user-auth",
+  taskTitle: "Implemented OAuth integration",
+  taskStatus: "done",
+  notes: "• Added Google OAuth\n• Configured JWT tokens",
+  sinceDate: "2025-11-20"
+})
+
+Perfect for catching up project tracking with actual code!
 ```
 
 ## 🚀 Quick Start
@@ -376,6 +398,7 @@ This project is perfect for learning:
 - Task dependencies
 - Batch task updates
 - Export to Markdown
+- ✅ **DONE:** Git integration (`lm save` command)
 
 ### Phase 3: TUI Dashboard
 - Real-time visual dashboard
@@ -384,7 +407,7 @@ This project is perfect for learning:
 - Keyboard shortcuts
 
 ### Phase 4: Advanced Features
-- Git integration (commit linking)
+- ✅ **DONE:** Git commit linking
 - Project templates
 - Custom task statuses
 - Team collaboration features
