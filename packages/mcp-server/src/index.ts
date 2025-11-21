@@ -39,6 +39,7 @@ import { zodToJsonSchema } from 'zod-to-json-schema';
 import { SaveSpecSchema, handleSaveSpec } from './tools/save-spec.js';
 import { GetContextSchema, handleGetContext } from './tools/get-context.js';
 import { handleListProjects } from './tools/list-projects.js';
+import { SyncWorkSchema, handleSyncWork } from './tools/sync-work.js';
 
 /**
  * Creates and configures the MCP server instance.
@@ -55,7 +56,7 @@ import { handleListProjects } from './tools/list-projects.js';
 const server = new Server(
   {
     name: 'luminaryflow',
-    version: '0.1.0',
+    version: '0.2.0', // Bumped version for sync_work feature
   },
   {
     capabilities: {
@@ -111,6 +112,15 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
           required: [],
         },
       },
+      {
+        name: 'sync_work',
+        description:
+          '🆕 Retroactively document completed work to a project. ' +
+          'Use this when work was done outside the normal workflow (e.g., direct coding without /start:specify). ' +
+          'Optionally analyzes git commits to detect changes. ' +
+          'Perfect for catching up project tracking with actual implementation.',
+        inputSchema: zodToJsonSchema(SyncWorkSchema),
+      },
     ],
   };
 });
@@ -164,6 +174,14 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       case 'list_projects': {
         // No input validation needed - list_projects takes no arguments
         const result = await handleListProjects();
+        return {
+          content: [{ type: 'text', text: result }],
+        };
+      }
+
+      case 'sync_work': {
+        const input = SyncWorkSchema.parse(args);
+        const result = await handleSyncWork(input);
         return {
           content: [{ type: 'text', text: result }],
         };

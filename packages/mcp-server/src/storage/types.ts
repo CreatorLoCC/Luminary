@@ -7,6 +7,8 @@ export interface Task {
   title: string;
   status: 'todo' | 'in-progress' | 'done';
   createdAt: string;
+  completedAt?: string;
+  notes?: string;
 }
 
 export interface ProjectSpec {
@@ -17,6 +19,7 @@ export interface ProjectSpec {
   createdAt: string;
   updatedAt: string;
   status: 'planning' | 'in-progress' | 'completed';
+  source?: string;
 }
 
 export interface ProjectStore {

@@ -17,13 +17,14 @@ import { statusCommand } from './commands/status.js';
 import { tasksCommand } from './commands/tasks.js';
 import { contextCommand } from './commands/context.js';
 import { selectCommand } from './commands/select.js';
+import { saveCommand } from './commands/save.js';
 
 const program = new Command();
 
 program
   .name('luminary')
   .description('CLI viewer for LuminarySmartSpace project management')
-  .version('0.1.0');
+  .version('0.2.0');
 
 // luminary status
 program
@@ -84,6 +85,26 @@ program
     }
   });
 
+// luminary save
+program
+  .command('save')
+  .description('🆕 Intelligently save completed work by analyzing git commits')
+  .option('-p, --project <id>', 'Project ID to save work to (auto-detects if omitted)')
+  .option('-s, --since <time>', 'Analyze commits since this time (default: 24.hours.ago)', '24.hours.ago')
+  .option('-m, --message <text>', 'Custom task description (auto-generates if omitted)')
+  .action(async (options) => {
+    try {
+      await saveCommand({
+        projectId: options.project,
+        since: options.since,
+        message: options.message,
+      });
+    } catch (error) {
+      console.error(chalk.red('Error:'), error instanceof Error ? error.message : error);
+      process.exit(1);
+    }
+  });
+
 // Default action - show help if no command provided
 program.action(() => {
   console.log(chalk.bold.cyan('\n🚀 LuminarySmartSpace CLI\n'));
@@ -93,6 +114,7 @@ program.action(() => {
   console.log('  luminary tasks               - List all tasks');
   console.log('  luminary tasks --status todo - Filter tasks by status');
   console.log('  luminary context <id>        - Show project details');
+  console.log('  luminary save                - 🆕 Save completed work from git commits');
   console.log('');
   console.log(chalk.dim('Run "luminary --help" for more information\n'));
 });

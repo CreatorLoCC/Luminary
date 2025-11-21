@@ -3,8 +3,8 @@
  * Shared logic between CLI and MCP server
  */
 
-import { readFile, access } from 'fs/promises';
-import { join } from 'path';
+import { readFile, writeFile, mkdir, access } from 'fs/promises';
+import { join, dirname } from 'path';
 
 /**
  * Core types for project data
@@ -14,6 +14,8 @@ export interface Task {
   title: string;
   status: 'todo' | 'in-progress' | 'done';
   createdAt: string;
+  completedAt?: string;
+  notes?: string;
 }
 
 export interface ProjectSpec {
@@ -24,6 +26,7 @@ export interface ProjectSpec {
   createdAt: string;
   updatedAt: string;
   status: 'planning' | 'in-progress' | 'completed';
+  source?: string;
 }
 
 export interface ProjectStore {
@@ -36,6 +39,18 @@ export interface ProjectStore {
  * Path to the storage file
  */
 const STORE_PATH = join(process.cwd(), '.claude', 'luminary', 'projects.json');
+
+/**
+ * Ensure storage directory exists
+ */
+async function ensureStorageDir(): Promise<void> {
+  const dir = dirname(STORE_PATH);
+  try {
+    await access(dir);
+  } catch {
+    await mkdir(dir, { recursive: true });
+  }
+}
 
 /**
  * Check if the projects file exists
@@ -86,4 +101,27 @@ export async function getAllProjects(): Promise<ProjectSpec[]> {
   if (!store) return [];
 
   return store.projects;
+}
+
+/**
+ * Save projects to storage
+ */
+export async function saveProjects(store: ProjectStore): Promise<void> {
+  try {
+    await ensureStorageDir();
+
+    // Update timestamp
+    store.lastUpdated = new Date().toISOString();
+
+    // Serialize with pretty formatting
+    const json = JSON.stringify(store, null, 2);
+
+    // Write to file
+    await writeFile(STORE_PATH, json, 'utf-8');
+  } catch (error) {
+    console.error('Error saving projects:', error);
+    throw new Error(
+      'Failed to save project data. Check file permissions for .claude/luminary/'
+    );
+  }
 }
