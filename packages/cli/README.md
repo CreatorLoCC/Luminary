@@ -10,6 +10,23 @@ Command-line interface for viewing and managing LuminarySmartSpace project data.
 
 ## 📦 Installation
 
+### Global Installation (Recommended)
+
+Use the one-command installer from the main repository:
+
+```bash
+# Unix/Linux/macOS
+curl -fsSL https://raw.githubusercontent.com/CreatorLoCC/Luminary/master/install.sh | bash
+
+# Windows PowerShell
+iwr -useb https://raw.githubusercontent.com/CreatorLoCC/Luminary/master/install.ps1 | iex
+```
+
+This automatically:
+- ✅ Builds and installs the `lumi` command globally
+- ✅ Adds to your PATH
+- ✅ Configures Claude Code MCP server
+
 ### Local Development
 
 ```bash
@@ -17,24 +34,45 @@ Command-line interface for viewing and managing LuminarySmartSpace project data.
 cd packages/cli
 npm install
 npm run build
-```
 
-### Global Installation (Recommended)
-
-```bash
-# From the CLI package directory
+# Link globally (optional)
 npm link
-
-# Now you can use luminarysmartspace or the shorthand luminarysmartspace from anywhere!
-lumi status
-lumi status        # Shorthand - same command, fewer keystrokes!
 ```
+
+---
 
 ## 🎯 Commands
 
-**Tip**: Use `lumi` as shorthand for `lumi` - e.g., `lumi status` instead of `lumi status`!
+All commands use the `lumi` CLI tool.
 
-### `lumi status` (or `lumi status`) ⭐
+### `lumi init` 🆕
+
+Initialize a workspace in the current directory.
+
+**Example:**
+```bash
+cd your-project
+lumi init
+```
+
+**Prompts you to choose:**
+- **Multi-project mode**: Track multiple projects from parent folder
+- **Single-project mode**: Track just this project
+
+**Output:**
+```
+✨ LuminarySmartSpace Workspace Initialization
+
+Choose your mode:
+1. Multi-project mode - Track multiple projects from parent folder
+2. Single-project mode - Track just this project
+
+Which mode? (1=multi-project, 2=single-project): _
+```
+
+---
+
+### `lumi status` ⭐
 
 View all projects with their status and progress. **Interactive by default** - automatically prompts for project selection!
 
@@ -60,11 +98,15 @@ lumi status
 Enter number (or q to quit): _
 ```
 
-**New in v0.2.0:** Just type a number to view full project details! Use `--no-interactive` to disable the prompt.
+**Options:**
+```bash
+lumi status                  # Interactive by default
+lumi status --no-interactive # Just show list, no prompt
+```
 
 ---
 
-### `lumi select` (or `lumi select`) ⭐ NEW!
+### `lumi select` ⭐
 
 Interactively select a project to view full details.
 
@@ -77,25 +119,24 @@ lumi select
 ```
 🎯 Select a Project
 
-1. 📋 AuraMechanics Development [auramechanics-roadmap]
+1. 📋 User Authentication [user-auth]
    ████████░░░░░░░ 50% • 2 hours ago
 
-2. 🔄 Luminary Development Roadmap [luminary-roadmap]
+2. 🔄 Blog Platform [blog-platform]
    ██████░░░░░░░░░ 40% • 2 hours ago
 
 Enter number (or q to quit): 1
 
-📋 AuraMechanics Development
+🔄 User Authentication System
 
-ID: auramechanics-roadmap
-Status: planning
-Source: AuraMechanics
+ID: user-auth
+Status: in-progress
 
 📝 Description:
-Human Design analysis platform with accurate chart calculations...
+Implement OAuth 2.0 authentication with JWT tokens...
 
 📊 Progress:
-███████████████░░░░░░░░░░░░░░░ 50% (4/8)
+███████████████░░░░░░░░░░░░░░░ 50% (2/4)
 ...
 ```
 
@@ -103,11 +144,10 @@ Human Design analysis platform with accurate chart calculations...
 - No need to remember project IDs
 - Quick browsing with numbered selection
 - See overview before drilling down
-- Perfect for daily standup reviews!
 
 ---
 
-### `lumi tasks` ⭐
+### `lumi tasks`
 
 List all tasks across all projects. **Interactive by default** - automatically prompts for project selection after showing tasks!
 
@@ -138,13 +178,12 @@ Enter number (or q to quit): _
 
 **Filter by status:**
 ```bash
-lumi tasks --status todo           # Interactive by default
-lumi tasks --no-interactive        # Just show tasks, no prompt
-lumi tasks --status in-progress
-lumi tasks --status done
+lumi tasks                        # All tasks (interactive)
+lumi tasks --status todo          # Only todo tasks
+lumi tasks --status in-progress   # Only in-progress tasks
+lumi tasks --status done          # Only completed tasks
+lumi tasks --no-interactive       # No prompt after display
 ```
-
-**New in v0.2.0:** After viewing tasks, you're prompted to select a project for full details!
 
 ---
 
@@ -186,27 +225,63 @@ Implement OAuth 2.0 authentication with JWT tokens for secure user login
 
 ---
 
-## 📁 Data Location
+### `lumi save` 🆕
 
-The CLI reads project data from:
+Analyze recent git commits and save them as completed tasks.
+
+**Example:**
+```bash
+lumi save
+```
+
+Analyzes your recent commits and adds them to the appropriate project's task list.
+
+**Use case**: Retroactively track work you've already completed via git commits.
+
+---
+
+## 📁 Data Storage
+
+The CLI reads project data from workspace-aware locations:
+
+### Multi-Project Mode
+```
+<workspace-root>/.lumi/
+├── config.json
+└── projects/
+    └── projects.json  # All projects
+```
+
+### Single-Project Mode
+```
+<project-root>/.lumi/
+├── config.json
+└── projects.json      # This project only
+```
+
+### Legacy Fallback
 ```
 .claude/luminary/projects.json
 ```
 
-This file is created and managed by the LuminarySmartSpace MCP server. The CLI provides read-only access for viewing your project data.
+The CLI automatically detects which mode is active and reads from the correct location.
+
+---
 
 ## 🎨 Features
 
 - ✅ **Beautiful output** with colors and emojis
-- ✅ **Interactive by default** - prompts for selection automatically ⭐ NEW!
-- ✅ **Reusable selector utility** - consistent UX across all commands
+- ✅ **Interactive by default** - prompts for selection automatically
+- ✅ **Workspace-aware** - Detects multi-project vs single-project modes
 - ✅ **Progress visualization** with ASCII progress bars
 - ✅ **Smart time formatting** (relative times like "3 hours ago")
 - ✅ **Task filtering** by status
 - ✅ **Cross-project task views**
 - ✅ **Detailed project context**
-- ✅ **Workspace-aware** scanning for multi-project setups
 - ✅ **Git integration** with `lumi save` command
+- ✅ **Reusable selector utility** - consistent UX
+
+---
 
 ## 🛠️ Development
 
@@ -225,32 +300,41 @@ npm run dev
 npm run type-check
 ```
 
+---
+
 ## 📦 Package Structure
 
 ```
 packages/cli/
 ├── src/
 │   ├── commands/
-│   │   ├── status.ts    # Status command implementation
-│   │   ├── select.ts    # Interactive project selector (NEW!)
-│   │   ├── tasks.ts     # Tasks command implementation
-│   │   └── context.ts   # Context command implementation
-│   ├── workspace-scanner.ts  # Multi-project workspace scanning
-│   ├── storage.ts       # Storage utilities
-│   ├── format.ts        # Formatting utilities
-│   └── index.ts         # CLI entry point
-├── dist/                # Compiled JavaScript
+│   │   ├── init.ts       # Workspace initialization
+│   │   ├── status.ts     # Status command
+│   │   ├── select.ts     # Interactive selector
+│   │   ├── tasks.ts      # Tasks command
+│   │   ├── context.ts    # Context command
+│   │   └── save.ts       # Git commit analysis
+│   ├── workspace-config.ts   # Workspace detection
+│   ├── workspace-scanner.ts  # Multi-project scanning
+│   ├── storage.ts        # Storage utilities
+│   ├── format.ts         # Formatting utilities
+│   └── index.ts          # CLI entry point
+├── dist/                 # Compiled JavaScript
 ├── package.json
 ├── tsconfig.json
-└── README.md
+└── README.md            # This file
 ```
+
+---
 
 ## 🔧 Technologies
 
 - **Commander.js** - CLI framework
 - **Chalk** - Terminal colors and styling
 - **TypeScript** - Type-safe development
-- **Node.js** - Runtime
+- **Node.js** - Runtime environment
+
+---
 
 ## 📝 License
 

@@ -13,8 +13,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This is the biggest release yet! Complete installation overhaul with smart workspace detection.
 
-**Command Name**: `lumi` (full branding)
-**Workspace Directory**: `.luminarysmartspace/`
+**App Name**: LuminarySmartSpace (full branding in UI)
+**Command Name**: `lumi` (short, memorable CLI command)
+**Workspace Directory**: `.lumi/` (clean, simple)
 
 ### ✨ Added
 
@@ -26,7 +27,7 @@ This is the biggest release yet! Complete installation overhaul with smart works
 - Installation verification and troubleshooting
 
 #### Workspace System
-- **Workspace configuration system** (`.luminarysmartspace/config.json`)
+- **Workspace configuration system** (`.lumi/config.json`)
 - **Multi-project mode**: Track multiple projects from a parent directory
 - **Single-project mode**: Focus on individual project tracking
 - Smart workspace root detection (walks up directory tree)
@@ -47,30 +48,32 @@ This is the biggest release yet! Complete installation overhaul with smart works
 - Improved error messages for workspace issues
 
 #### MCP Server Updates
+- **Auto-configuration during installation** - Installer creates `~/.config/claude-code/mcp-config.json` automatically!
 - Workspace-aware storage paths
 - Dynamic path resolution for multi/single-project modes
 - Maintains backward compatibility with existing installations
+- MCP server name: `luminarysmartspace`
+- MCP tools: `save_spec`, `get_context`, `list_projects`, `sync_work`
 
 #### Documentation
+- **[QUICK_SETUP.md](QUICK_SETUP.md)** - NEW! 3-minute setup guide with troubleshooting
 - **[INSTALLATION.md](INSTALLATION.md)** - Comprehensive installation guide
-- Installation modes explanation
-- Post-installation setup guide
-- Workspace structure documentation
-- Troubleshooting section
-- Updated README.md with new branding and flow
+- **[CHANGELOG.md](CHANGELOG.md)** - Professional release notes (this file!)
+- Updated README.md with complete feature overview
+- Updated CLI README with correct command references
 - Version bumps across all packages
 
 ### 🔄 Changed
 
 - **CLI binary name**: `luminary`/`lm` → `lumi`
 - **Storage paths**: Now workspace-aware
-  - Multi-project: `<root>/.luminarysmartspace/projects/projects.json`
-  - Single-project: `<root>/.luminarysmartspace/projects.json`
+  - Multi-project: `<root>/.lumi/projects/projects.json`
+  - Single-project: `<root>/.lumi/projects.json`
   - Legacy: `.claude/luminary/projects.json` (fallback)
 - **Package version**: 0.2.0 → 0.3.0
 - **Installation method**: From manual npm commands to one-line installer
-- **Configuration location**: Moved to `.luminarysmartspace/` for consistency
-- **Install directory**: `~/.luminarysmartspace/` (was `~/.lumi/`)
+- **Configuration location**: Moved to `.lumi/` for consistency
+- **Install directory**: `~/.lumi/` (clean and simple)
 
 ### 🛠️ Technical Details
 
@@ -167,25 +170,23 @@ This is the biggest release yet! Complete installation overhaul with smart works
 2. **Or: Manual Upgrade**
    ```bash
    cd ~/.lumi  # Or your install location
-   git pull
+   git pull origin master
    npm install
    npm run build
-
-   # Update command link
-   cd packages/cli
-   npm link
    ```
 
-3. **Initialize Workspace**
+3. **Restart Claude Code** (if using MCP integration)
+
+4. **Initialize Workspace**
    ```bash
    cd your-project
    lumi init  # Choose your mode
    ```
 
-4. **Migrate Data (if needed)**
+5. **Migrate Data (if needed)**
    - Old data in `.claude/luminary/projects.json` still works!
-   - New workspaces use `.luminarysmartspace/` for consistency
-   - You can manually copy data to new location if desired
+   - New workspaces use `.lumi/` for consistency
+   - Backward compatibility maintained - no migration required!
 
 ---
 

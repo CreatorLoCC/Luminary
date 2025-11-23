@@ -54,7 +54,7 @@ The installer asks you to choose:
 
 ### 1. Global Installation (Recommended) ✨
 
-- **Location**: `~/.luminarysmartspace` (or `C:\Users\<You>\.lumi` on Windows)
+- **Location**: `~/.lumi` (or `C:\Users\<You>\.lumi` on Windows)
 - **Command**: Available everywhere as `lumi`
 - **Best for**: Most users
 - **Use case**: Track projects across your entire system
@@ -111,7 +111,10 @@ Perfect for a parent folder tracking multiple projects:
 ├── app1/
 ├── app2/
 ├── app3/
-└── .luminarysmartspace/config.json  # Tracks all above projects
+└── .lumi/
+    ├── config.json          # Workspace config
+    └── projects/
+        └── projects.json    # Tracks all above projects
 ```
 
 #### Option 2: Single-Project Mode
@@ -119,8 +122,9 @@ Perfect for individual repositories:
 ```
 ~/Projects/my-app/
 ├── src/
-├── .luminarysmartspace/config.json  # Tracks only this project
-└── .luminarysmartspace/projects.json
+└── .lumi/
+    ├── config.json       # Workspace config
+    └── projects.json     # Tracks only this project
 ```
 
 ### Step 3: Start Tracking!
@@ -167,17 +171,21 @@ After running `lumi init`, you'll have:
 ## 📦 What Gets Installed?
 
 ```
-~/.luminarysmartspace/                          # Install directory
+~/.lumi/                          # Install directory
 ├── packages/
 │   ├── cli/                     # The 'lumi' command
 │   │   └── dist/index.js        # Entry point
 │   └── mcp-server/              # MCP tools for Claude
 │       └── dist/index.js        # Server entry
-├── .claude/
-│   └── mcp-config.json          # MCP configuration
 ├── install.sh                   # Unix installer
 ├── install.ps1                  # Windows installer
 └── README.md                    # Documentation
+
+~/.config/claude-code/
+└── mcp-config.json              # MCP configuration (auto-created)
+
+~/.local/bin/
+└── lumi                         # Global command symlink
 ```
 
 ---
@@ -187,8 +195,8 @@ After running `lumi init`, you'll have:
 To update to the latest version:
 
 ```bash
-cd ~/.luminarysmartspace
-git pull
+cd ~/.lumi
+git pull origin master
 npm install
 npm run build
 ```
@@ -203,13 +211,16 @@ Or just re-run the installer - it will detect and update automatically!
 
 ```bash
 # Remove installation directory
-rm -rf ~/.luminarysmartspace
+rm -rf ~/.lumi
 
 # Remove command (Unix/Mac)
 rm ~/.local/bin/lumi
 
 # Remove command (Windows)
 # Delete: C:\Users\<You>\.local\bin\lumi.bat
+
+# Remove MCP config (optional)
+rm ~/.config/claude-code/mcp-config.json
 ```
 
 ### Keep Your Data
@@ -256,7 +267,7 @@ chmod +x ~/.local/bin/lumi
 
 **Fix**:
 ```bash
-cd ~/.luminarysmartspace
+cd ~/.lumi
 npm install
 npm run build
 ```
@@ -267,11 +278,11 @@ npm run build
 
 **Fix**:
 1. Run `lumi init` in your project directory
-2. Verify `.luminarysmartspace/config.json` exists
+2. Verify `.lumi/config.json` exists
 3. Check Claude is using the MCP server:
    ```bash
    # View MCP config
-   cat ~/.luminarysmartspace/.claude/mcp-config.json
+   cat ~/.config/claude-code/mcp-config.json
    ```
 
 ---
