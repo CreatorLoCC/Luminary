@@ -346,7 +346,7 @@ EOF
 cat > .claude/mcp-config.json << 'EOF'
 {
   "mcpServers": {
-    "luminarysmartspace": {
+    "lumi": {
       "command": "node",
       "args": [
         "/absolute/path/to/LuminarySmartSpace/packages/mcp-server/dist/index.js"

@@ -72,7 +72,7 @@ your-project/
 ```json
 {
   "mcpServers": {
-    "luminarysmartspace": {
+    "lumi": {
       "command": "node",
       "args": [
         "/absolute/path/to/LuminarySmartSpace/packages/mcp-server/dist/index.js"

@@ -1,11 +1,10 @@
 {
   "name": "@luminarysmartspace/cli",
-  "version": "0.2.0",
-  "description": "CLI viewer for LuminarySmartSpace projects with git integration",
+  "version": "0.3.0",
+  "description": "CLI for LuminarySmartSpace - Smart project tracking with workspace support",
   "type": "module",
   "bin": {
-    "luminary": "./dist/index.js",
-    "lm": "./dist/index.js"
+    "lumi": "./dist/index.js"
   },
   "main": "dist/index.js",
   "scripts": {

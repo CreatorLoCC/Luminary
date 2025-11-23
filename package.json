@@ -1,7 +1,7 @@
 {
   "name": "luminarysmartspace",
-  "version": "0.1.0",
-  "description": "Project management tools for Claude Code",
+  "version": "0.3.0",
+  "description": "LuminarySmartSpace - Smart project tracking for Claude Code with workspace support",
   "type": "module",
   "private": true,
   "workspaces": [

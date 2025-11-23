@@ -1,10 +1,16 @@
 /**
  * Storage utilities for reading LuminarySmartSpace project data
  * Shared logic between CLI and MCP server
+ *
+ * Now supports workspace-aware storage paths:
+ * - Multi-project mode: <workspace-root>/.lumi/projects/projects.json
+ * - Single-project mode: <workspace-root>/.lumi/projects.json
+ * - Legacy fallback: .claude/luminary/projects.json
  */
 
 import { readFile, writeFile, mkdir, access } from 'fs/promises';
 import { join, dirname } from 'path';
+import { getProjectsStoragePath, findWorkspaceRoot } from './workspace-config.js';
 
 /**
  * Core types for project data
@@ -36,15 +42,25 @@ export interface ProjectStore {
 }
 
 /**
- * Path to the storage file
+ * Get the storage path dynamically based on workspace config
+ * Falls back to legacy path if no workspace configured
  */
-const STORE_PATH = join(process.cwd(), '.claude', 'luminary', 'projects.json');
+async function getStoragePath(): Promise<string> {
+  try {
+    // Try workspace-aware path first
+    const workspacePath = await getProjectsStoragePath();
+    return workspacePath;
+  } catch {
+    // Fallback to legacy path for backward compatibility
+    return join(process.cwd(), '.claude', 'luminary', 'projects.json');
+  }
+}
 
 /**
  * Ensure storage directory exists
  */
-async function ensureStorageDir(): Promise<void> {
-  const dir = dirname(STORE_PATH);
+async function ensureStorageDir(storagePath: string): Promise<void> {
+  const dir = dirname(storagePath);
   try {
     await access(dir);
   } catch {
@@ -57,7 +73,8 @@ async function ensureStorageDir(): Promise<void> {
  */
 export async function projectsFileExists(): Promise<boolean> {
   try {
-    await access(STORE_PATH);
+    const storagePath = await getStoragePath();
+    await access(storagePath);
     return true;
   } catch {
     return false;
@@ -69,12 +86,13 @@ export async function projectsFileExists(): Promise<boolean> {
  */
 export async function loadProjects(): Promise<ProjectStore | null> {
   try {
+    const storagePath = await getStoragePath();
     const exists = await projectsFileExists();
     if (!exists) {
       return null;
     }
 
-    const data = await readFile(STORE_PATH, 'utf-8');
+    const data = await readFile(storagePath, 'utf-8');
     const parsed = JSON.parse(data) as ProjectStore;
     return parsed;
   } catch (error) {
@@ -108,7 +126,8 @@ export async function getAllProjects(): Promise<ProjectSpec[]> {
  */
 export async function saveProjects(store: ProjectStore): Promise<void> {
   try {
-    await ensureStorageDir();
+    const storagePath = await getStoragePath();
+    await ensureStorageDir(storagePath);
 
     // Update timestamp
     store.lastUpdated = new Date().toISOString();
@@ -117,11 +136,11 @@ export async function saveProjects(store: ProjectStore): Promise<void> {
     const json = JSON.stringify(store, null, 2);
 
     // Write to file
-    await writeFile(STORE_PATH, json, 'utf-8');
+    await writeFile(storagePath, json, 'utf-8');
   } catch (error) {
     console.error('Error saving projects:', error);
     throw new Error(
-      'Failed to save project data. Check file permissions for .claude/luminary/'
+      'Failed to save project data. Check file permissions for the storage directory'
     );
   }
 }

@@ -1,47 +1,45 @@
-# 🌊 LuminarySmartSpace
+# ✨ LuminarySmartSpace
 
-**Project Management for Claude Code** - Part of the **[💡 Luminary](https://github.com/CreatorLoCC/Luminary)** ecosystem
+**Smart project tracking for Claude Code** - Part of the **[💡 Luminary](https://github.com/CreatorLoCC/Luminary)** ecosystem
 
 Give Claude persistent memory for your projects. Plan once, remember forever.
 
 ---
 
 **Built by**: [Luminary](https://github.com/CreatorLoCC/Luminary) - Solo AI Dev Company
-**Tagline**: *"Illuminate Your Development Workflow"*
+**Tagline**: *"Install once. Track forever."*
 
-## ⚡ Quick Start
+## ⚡ One-Command Installation
 
-### New User? Start Here! 👋
-
-**[📖 Read the Startup Guide](STARTUP_GUIDE.md)** - Complete walkthrough from zero to `lm status`
-
-### Already Know What to Do?
-
+### Unix/Linux/macOS
 ```bash
-# 1. Clone the repo
-git clone https://github.com/CreatorLoCC/Luminary.git
-cd LuminarySmartSpace
+curl -fsSL https://raw.githubusercontent.com/CreatorLoCC/Luminary/main/install.sh | bash
+```
 
-# 2. One-command setup
-npm run setup
+### Windows PowerShell
+```powershell
+iwr -useb https://raw.githubusercontent.com/CreatorLoCC/Luminary/main/install.ps1 | iex
+```
 
-# 3. Initialize in Claude Code
-/lls
-
-# 4. Check it works
-lm status
+### Then start tracking!
+```bash
+cd your-project
+lumi init          # Choose multi-project or single-project mode
+lumi status        # View tracked projects
 ```
 
 **That's it!** ✨
+
+**📖 Detailed Instructions**: See [INSTALLATION.md](INSTALLATION.md)
 
 ---
 
 ## 📚 Documentation
 
-- **[🚀 STARTUP_GUIDE.md](STARTUP_GUIDE.md)** - Complete guide for new users (START HERE!)
+- **[🚀 INSTALLATION.md](INSTALLATION.md)** - Complete installation guide (START HERE!)
 - **[⚡ QUICK_START.md](QUICK_START.md)** - Quick reference for common tasks
-- **[🔧 INSTALL.md](INSTALL.md)** - Installation troubleshooting
 - **[📖 GETTING_STARTED.md](GETTING_STARTED.md)** - Development workflows
+- **[🔧 INSTALL.md](INSTALL.md)** - Advanced installation & troubleshooting
 
 ---
 
@@ -53,6 +51,8 @@ lm status
 - 💾 **Save** project specs and tasks
 - 🔄 **Retrieve** context across sessions
 - 📊 **Track** progress over time
+- 🗂️ **Organize** multiple projects or focus on one
+- ⚡ **Work anywhere** with smart workspace detection
 
 ## 🏗️ Architecture
 
@@ -82,45 +82,42 @@ lm status
 
 ## ✨ Features
 
-### 💻 CLI Viewer
+### 💻 Lumi CLI
 
-View your project data from the command line:
+Your command-line interface for project tracking:
 
 ```bash
-# View all projects (interactive by default - prompts for selection) ⭐
-lm status              # Shows list, then prompts to select
-lm status --no-interactive  # Just show list, no prompt
+# Initialize workspace
+lumi init              # Choose multi-project or single-project mode
+
+# View all projects (interactive by default) ⭐
+lumi status              # Shows list, then prompts to select
+lumi status --no-interactive  # Just show list, no prompt
 
 # Select a project interactively
-lm select              # Direct to selection
+lumi select              # Direct to selection
 
 # List all tasks (interactive by default) ⭐
-lm tasks               # Shows tasks, then prompts to select project
-lm tasks --status todo # Filter + interactive selection
-lm tasks --no-interactive  # Just show tasks, no prompt
+lumi tasks               # Shows tasks, then prompts to select project
+lumi tasks --status todo # Filter + interactive selection
+lumi tasks --no-interactive  # Just show tasks, no prompt
 
 # View project details (by ID)
-lm context user-auth   # Direct context view
+lumi context user-auth   # Direct context view
 
-# 🆕 Save completed work from git commits
-lm save                # Auto-analyzes last 24 hours
-lm save --project <id> # Specify project
-lm save --since "2.days.ago"  # Custom time range
+# Save completed work from git commits
+lumi save                # Auto-analyzes last 24 hours
+lumi save --project <id> # Specify project
+lumi save --since "2.days.ago"  # Custom time range
 ```
 
-**✨ New in v0.2.0:** Interactive selection is now the DEFAULT! Just run `lm status` or `lm tasks` and you'll be prompted to select a project automatically. Type a number and view full details instantly! 🎯
+**✨ New in v0.3.0:**
+- **One-command install!** Run the installer and you're ready
+- **Workspace modes!** Multi-project or single-project tracking
+- **Smart path detection!** No more context issues
+- **`lumi` command!** Shorter, cleaner, better
 
-**Installation:**
-```bash
-cd packages/cli
-npm install
-npm run build
-npm link  # Makes both 'luminary' and 'lm' available globally
-```
-
-**Tip:** Use `lm` as shorthand for `luminary` - same power, fewer keystrokes! ⚡
-
-See [CLI Documentation](packages/cli/README.md) for details.
+See [INSTALLATION.md](INSTALLATION.md) for setup.
 
 ### 🔧 MCP Tools (Available to Claude)
 

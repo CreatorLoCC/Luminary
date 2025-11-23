@@ -25,22 +25,22 @@ npm run build
 # From the CLI package directory
 npm link
 
-# Now you can use 'luminary' or the shorthand 'lm' from anywhere!
-luminary status
-lm status        # Shorthand - same command, fewer keystrokes!
+# Now you can use luminarysmartspace or the shorthand luminarysmartspace from anywhere!
+lumi status
+lumi status        # Shorthand - same command, fewer keystrokes!
 ```
 
 ## 🎯 Commands
 
-**Tip**: Use `lm` as shorthand for `luminary` - e.g., `lm status` instead of `luminary status`!
+**Tip**: Use `lumi` as shorthand for `lumi` - e.g., `lumi status` instead of `lumi status`!
 
-### `luminary status` (or `lm status`) ⭐
+### `lumi status` (or `lumi status`) ⭐
 
 View all projects with their status and progress. **Interactive by default** - automatically prompts for project selection!
 
 **Example:**
 ```bash
-lm status
+lumi status
 ```
 
 **Output:**
@@ -64,13 +64,13 @@ Enter number (or q to quit): _
 
 ---
 
-### `luminary select` (or `lm select`) ⭐ NEW!
+### `lumi select` (or `lumi select`) ⭐ NEW!
 
 Interactively select a project to view full details.
 
 **Example:**
 ```bash
-lm select
+lumi select
 ```
 
 **Output:**
@@ -107,13 +107,13 @@ Human Design analysis platform with accurate chart calculations...
 
 ---
 
-### `luminary tasks` ⭐
+### `lumi tasks` ⭐
 
 List all tasks across all projects. **Interactive by default** - automatically prompts for project selection after showing tasks!
 
 **Example:**
 ```bash
-luminary tasks
+lumi tasks
 ```
 
 **Output:**
@@ -138,23 +138,23 @@ Enter number (or q to quit): _
 
 **Filter by status:**
 ```bash
-luminary tasks --status todo           # Interactive by default
-luminary tasks --no-interactive        # Just show tasks, no prompt
-luminary tasks --status in-progress
-luminary tasks --status done
+lumi tasks --status todo           # Interactive by default
+lumi tasks --no-interactive        # Just show tasks, no prompt
+lumi tasks --status in-progress
+lumi tasks --status done
 ```
 
 **New in v0.2.0:** After viewing tasks, you're prompted to select a project for full details!
 
 ---
 
-### `luminary context <project-id>`
+### `lumi context <project-id>`
 
 Show detailed context for a specific project.
 
 **Example:**
 ```bash
-luminary context user-auth
+lumi context user-auth
 ```
 
 **Output:**
@@ -206,7 +206,7 @@ This file is created and managed by the LuminarySmartSpace MCP server. The CLI p
 - ✅ **Cross-project task views**
 - ✅ **Detailed project context**
 - ✅ **Workspace-aware** scanning for multi-project setups
-- ✅ **Git integration** with `lm save` command
+- ✅ **Git integration** with `lumi save` command
 
 ## 🛠️ Development
 

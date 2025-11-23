@@ -47,7 +47,7 @@ In the **current working directory**, create:
 ```json
 {
   "mcpServers": {
-    "luminarysmartspace": {
+    "lumi": {
       "command": "node",
       "args": [
         "<absolute-path-to-LuminarySmartSpace>/packages/mcp-server/dist/index.js"

@@ -63,7 +63,7 @@ Available commands:
 ```json
 {
   "mcpServers": {
-    "luminarysmartspace": {
+    "lumi": {
       "command": "node",
       "args": ["<absolute-path>/packages/mcp-server/dist/index.js"]
     }
