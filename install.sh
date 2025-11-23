@@ -3,7 +3,7 @@
 # LuminarySmartSpace Installer for Unix/Linux/macOS
 #
 # One-command installation:
-#   curl -fsSL https://raw.githubusercontent.com/CreatorLoCC/Luminary/main/install.sh | bash
+#   curl -fsSL https://raw.githubusercontent.com/CreatorLoCC/Luminary/master/install.sh | bash
 #
 # Or download and run:
 #   ./install.sh
@@ -101,7 +101,7 @@ echo ""
 if [ -d "$INSTALL_TARGET" ]; then
     echo -e "${YELLOW}⚠️  Directory already exists. Updating...${NC}"
     cd "$INSTALL_TARGET"
-    git pull origin master || git pull origin main
+    git pull origin master
 else
     echo -e "${DIM}Cloning repository...${NC}"
     git clone "$REPO_URL" "$INSTALL_TARGET"

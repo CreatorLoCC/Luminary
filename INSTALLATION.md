@@ -9,13 +9,13 @@
 ### Unix/Linux/macOS
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/CreatorLoCC/Luminary/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/CreatorLoCC/Luminary/master/install.sh | bash
 ```
 
 ### Windows PowerShell
 
 ```powershell
-iwr -useb https://raw.githubusercontent.com/CreatorLoCC/Luminary/main/install.ps1 | iex
+iwr -useb https://raw.githubusercontent.com/CreatorLoCC/Luminary/master/install.ps1 | iex
 ```
 
 **That's it!** The installer handles everything:
@@ -316,7 +316,7 @@ Install non-interactively:
 export LUMI_INSTALL_DIR=/opt/lumi
 
 # Run installer with defaults
-curl -fsSL https://raw.githubusercontent.com/CreatorLoCC/Luminary/main/install.sh | bash -s -- --global --non-interactive
+curl -fsSL https://raw.githubusercontent.com/CreatorLoCC/Luminary/master/install.sh | bash -s -- --global --non-interactive
 ```
 
 ---

@@ -13,12 +13,12 @@ Give Claude persistent memory for your projects. Plan once, remember forever.
 
 ### Unix/Linux/macOS
 ```bash
-curl -fsSL https://raw.githubusercontent.com/CreatorLoCC/Luminary/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/CreatorLoCC/Luminary/master/install.sh | bash
 ```
 
 ### Windows PowerShell
 ```powershell
-iwr -useb https://raw.githubusercontent.com/CreatorLoCC/Luminary/main/install.ps1 | iex
+iwr -useb https://raw.githubusercontent.com/CreatorLoCC/Luminary/master/install.ps1 | iex
 ```
 
 ### Then start tracking!

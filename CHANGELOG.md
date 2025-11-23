@@ -161,7 +161,7 @@ This is the biggest release yet! Complete installation overhaul with smart works
 1. **Recommended: Fresh Install**
    ```bash
    # Run the new installer
-   curl -fsSL https://raw.githubusercontent.com/CreatorLoCC/Luminary/main/install.sh | bash
+   curl -fsSL https://raw.githubusercontent.com/CreatorLoCC/Luminary/master/install.sh | bash
    ```
 
 2. **Or: Manual Upgrade**

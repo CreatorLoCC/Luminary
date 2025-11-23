@@ -2,7 +2,7 @@
 # LuminarySmartSpace Installer for Windows PowerShell
 #
 # One-command installation:
-#   iwr -useb https://raw.githubusercontent.com/CreatorLoCC/Luminary/main/install.ps1 | iex
+#   iwr -useb https://raw.githubusercontent.com/CreatorLoCC/Luminary/master/install.ps1 | iex
 #
 # Or download and run:
 #   .\install.ps1
@@ -102,9 +102,6 @@ if (Test-Path $InstallTarget) {
     Write-Host "⚠️  Directory already exists. Updating..." -ForegroundColor Yellow
     Set-Location $InstallTarget
     git pull origin master
-    if ($LASTEXITCODE -ne 0) {
-        git pull origin main
-    }
 } else {
     Write-Host "Cloning repository..." -ForegroundColor DarkGray
     git clone $RepoUrl $InstallTarget
