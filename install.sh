@@ -154,22 +154,56 @@ if [ "$GLOBAL_INSTALL" = true ]; then
     fi
 fi
 
-# Success!
-echo -e "${GREEN}${BOLD}🎉 Lumi installed successfully!${NC}"
-echo ""
-echo -e "${DIM}Next steps:${NC}"
+# Configure MCP server for Claude Code
+echo -e "${DIM}Configuring MCP server for Claude Code...${NC}"
 
-if [ "$GLOBAL_INSTALL" = true ]; then
-    echo -e "  1. Run ${CYAN}${BOLD}lumi init${NC} in your project directory"
+# Determine Claude Code config location
+if [ -f "$HOME/.config/claude-code/mcp-config.json" ]; then
+    CLAUDE_CONFIG="$HOME/.config/claude-code/mcp-config.json"
+elif [ -f "$HOME/.claude/mcp-config.json" ]; then
+    CLAUDE_CONFIG="$HOME/.claude/mcp-config.json"
 else
-    echo -e "  1. Add ${CYAN}${INSTALL_TARGET}/packages/cli/dist/index.js${NC} to your PATH"
-    echo -e "  2. Run ${CYAN}${BOLD}lumi init${NC} in your project directory"
+    # Create default location
+    mkdir -p "$HOME/.config/claude-code"
+    CLAUDE_CONFIG="$HOME/.config/claude-code/mcp-config.json"
 fi
 
-echo -e "  2. Choose multi-project or single-project mode"
-echo -e "  3. Start tracking with ${CYAN}${BOLD}lumi status${NC}"
+# Create or update MCP config
+cat > "$CLAUDE_CONFIG" << EOF
+{
+  "mcpServers": {
+    "luminarysmartspace": {
+      "command": "node",
+      "args": [
+        "$INSTALL_TARGET/packages/mcp-server/dist/index.js"
+      ],
+      "env": {}
+    }
+  }
+}
+EOF
+
+echo -e "${GREEN}✓ MCP server configured${NC}"
 echo ""
-echo -e "${DIM}Need help? Run ${CYAN}${BOLD}lumi --help${NC}"
+
+# Success!
+echo -e "${GREEN}${BOLD}🎉 LuminarySmartSpace installed successfully!${NC}"
+echo ""
+echo -e "${DIM}Next steps:${NC}"
+echo -e "  1. ${YELLOW}${BOLD}Restart Claude Code${NC} ${DIM}(to load the MCP server)${NC}"
+
+if [ "$GLOBAL_INSTALL" = true ]; then
+    echo -e "  2. Run ${CYAN}${BOLD}lumi init${NC} in your project directory"
+else
+    echo -e "  2. Add ${CYAN}${INSTALL_TARGET}/packages/cli/dist/index.js${NC} to your PATH"
+    echo -e "  3. Run ${CYAN}${BOLD}lumi init${NC} in your project directory"
+fi
+
+echo -e "  3. Choose multi-project or single-project mode"
+echo -e "  4. Start tracking with ${CYAN}${BOLD}lumi status${NC}"
+echo ""
+echo -e "${DIM}📖 MCP server configured at: ${CYAN}$CLAUDE_CONFIG${NC}"
+echo -e "${DIM}💡 Need help? Run ${CYAN}${BOLD}lumi --help${NC}"
 echo ""
 
 # Verify installation

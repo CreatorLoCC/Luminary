@@ -170,32 +170,70 @@ node "$jsPath" %*
     }
 }
 
+# Configure MCP server for Claude Code
+Write-Host "Configuring MCP server for Claude Code..." -ForegroundColor DarkGray
+
+# Determine Claude Code config location
+$ClaudeConfigDir = Join-Path $env:USERPROFILE ".config\claude-code"
+$ClaudeConfig = Join-Path $ClaudeConfigDir "mcp-config.json"
+
+# Create directory if it doesn't exist
+if (-not (Test-Path $ClaudeConfigDir)) {
+    New-Item -ItemType Directory -Path $ClaudeConfigDir | Out-Null
+}
+
+# Create MCP config (use forward slashes for paths in JSON)
+$McpServerPath = $InstallTarget.Replace('\', '/')
+$ConfigContent = @"
+{
+  "mcpServers": {
+    "luminarysmartspace": {
+      "command": "node",
+      "args": [
+        "$McpServerPath/packages/mcp-server/dist/index.js"
+      ],
+      "env": {}
+    }
+  }
+}
+"@
+
+$ConfigContent | Out-File -FilePath $ClaudeConfig -Encoding UTF8
+
+Write-Host "✓ MCP server configured" -ForegroundColor Green
+Write-Host ""
+
 # Success!
-Write-Host "🎉 Lumi installed successfully!" -ForegroundColor Green
+Write-Host "🎉 LuminarySmartSpace installed successfully!" -ForegroundColor Green
 Write-Host ""
 Write-Host "Next steps:" -ForegroundColor DarkGray
+Write-Host "  1. " -NoNewline -ForegroundColor DarkGray
+Write-Host "Restart Claude Code" -NoNewline -ForegroundColor Yellow
+Write-Host " (to load the MCP server)" -ForegroundColor DarkGray
 
 if ($GlobalInstall) {
-    Write-Host "  1. Restart your terminal (or run: " -NoNewline -ForegroundColor DarkGray
+    Write-Host "  2. Restart your terminal (or run: " -NoNewline -ForegroundColor DarkGray
     Write-Host "refreshenv" -NoNewline -ForegroundColor Cyan
     Write-Host ")" -ForegroundColor DarkGray
-    Write-Host "  2. Run " -NoNewline -ForegroundColor DarkGray
+    Write-Host "  3. Run " -NoNewline -ForegroundColor DarkGray
     Write-Host "lumi init" -NoNewline -ForegroundColor Cyan
     Write-Host " in your project directory" -ForegroundColor DarkGray
 } else {
-    Write-Host "  1. Add " -NoNewline -ForegroundColor DarkGray
+    Write-Host "  2. Add " -NoNewline -ForegroundColor DarkGray
     Write-Host "$InstallTarget\packages\cli\dist\index.js" -NoNewline -ForegroundColor Cyan
     Write-Host " to your PATH" -ForegroundColor DarkGray
-    Write-Host "  2. Run " -NoNewline -ForegroundColor DarkGray
+    Write-Host "  3. Run " -NoNewline -ForegroundColor DarkGray
     Write-Host "lumi init" -NoNewline -ForegroundColor Cyan
     Write-Host " in your project directory" -ForegroundColor DarkGray
 }
 
-Write-Host "  3. Choose multi-project or single-project mode" -ForegroundColor DarkGray
-Write-Host "  4. Start tracking with " -NoNewline -ForegroundColor DarkGray
+Write-Host "  4. Choose multi-project or single-project mode" -ForegroundColor DarkGray
+Write-Host "  5. Start tracking with " -NoNewline -ForegroundColor DarkGray
 Write-Host "lumi status" -ForegroundColor Cyan
 Write-Host ""
-Write-Host "Need help? Run " -NoNewline -ForegroundColor DarkGray
+Write-Host "📖 MCP server configured at: " -NoNewline -ForegroundColor DarkGray
+Write-Host $ClaudeConfig -ForegroundColor Cyan
+Write-Host "💡 Need help? Run " -NoNewline -ForegroundColor DarkGray
 Write-Host "lumi --help" -ForegroundColor Cyan
 Write-Host ""
 
